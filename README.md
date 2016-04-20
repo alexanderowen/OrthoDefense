@@ -1,4 +1,4 @@
-# ExplorersGame
+# OrthoDefense
 Final Project for CIS 410, Spring 2016    
 
 Project Members:  
