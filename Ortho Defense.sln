@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{DF3C0C7A-CFB6-D792-C94A-89680ECAA325}") = "Ortho Defense", "Assembly-CSharp.csproj", "{48CCDE93-DFE9-C068-DB8D-94C5A4CA3255}"
+EndProject
+Project("{DF3C0C7A-CFB6-D792-C94A-89680ECAA325}") = "Ortho Defense", "Assembly-CSharp-Editor.csproj", "{A4ACA5EC-EA51-A113-EE2E-7917E8E94164}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48CCDE93-DFE9-C068-DB8D-94C5A4CA3255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48CCDE93-DFE9-C068-DB8D-94C5A4CA3255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48CCDE93-DFE9-C068-DB8D-94C5A4CA3255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48CCDE93-DFE9-C068-DB8D-94C5A4CA3255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4ACA5EC-EA51-A113-EE2E-7917E8E94164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4ACA5EC-EA51-A113-EE2E-7917E8E94164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4ACA5EC-EA51-A113-EE2E-7917E8E94164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4ACA5EC-EA51-A113-EE2E-7917E8E94164}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
