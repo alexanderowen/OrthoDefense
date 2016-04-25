@@ -17,6 +17,7 @@ public class PlayerHome : MonoBehaviour {
 
 	public void DamageHome(int loss) {
 		currentHomeHealth -= loss;
+		homeHealthSlider.value = currentHomeHealth;
 
 		if (currentHomeHealth <= 0) {
 			// GAMEOVER
