@@ -1332,7 +1332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &345275349
 Transform:
   m_ObjectHideFlags: 0
@@ -1387,6 +1387,22 @@ Prefab:
     - target: {fileID: 2392324, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
       propertyPath: m_UseLightProbes
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 113956, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_TagString
+      value: Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
@@ -6725,7 +6741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1725468539
 Transform:
   m_ObjectHideFlags: 0

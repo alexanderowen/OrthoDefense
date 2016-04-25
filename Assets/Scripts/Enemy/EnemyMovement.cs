@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-    Transform player;
+    Transform homeBase;
     //PlayerHealth playerHealth;
     //EnemyHealth enemyHealth;
     NavMeshAgent nav;
@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake ()
     {
-        player = GameObject.FindGameObjectWithTag ("Player").transform;
+        homeBase = GameObject.FindGameObjectWithTag ("Base").transform;
         //playerHealth = player.GetComponent <PlayerHealth> ();
         //enemyHealth = GetComponent <EnemyHealth> ();
         nav = GetComponent <NavMeshAgent> ();
@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
     {
         //if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         //{
-            nav.SetDestination (player.position);
+            nav.SetDestination (homeBase.position);
         //}
         //else
         //{

@@ -15,7 +15,7 @@ public class PlayerHome : MonoBehaviour {
 	void Update () {	
 	}
 
-	void DamageHome(int loss) {
+	public void DamageHome(int loss) {
 		currentHomeHealth -= loss;
 
 		if (currentHomeHealth <= 0) {
