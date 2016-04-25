@@ -4,8 +4,8 @@ namespace CompleteProject
 {
     public class GameOverManager : MonoBehaviour
     {
-        public PlayerHealth playerHealth;       // Reference to the player's health.
-
+        public PlayerHealth playerHealth;
+		public PlayerHome playerHome; 
 
         Animator anim;                          // Reference to the animator component.
 
@@ -20,7 +20,7 @@ namespace CompleteProject
         void Update ()
         {
             // If the player has run out of health...
-            if(playerHealth.currentHealth <= 0)
+			if(playerHealth.currentHealth <= 0 || playerHome.currentHomeHealth <= 0)
             {
                 // ... tell the animator the game is over.
                 anim.SetTrigger ("GameOver");
