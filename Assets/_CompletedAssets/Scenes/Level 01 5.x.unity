@@ -1345,6 +1345,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1001 &346008938
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -51
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -51
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268346
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9238795
+      objectReference: {fileID: 0}
+    - target: {fileID: 414110, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392324, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+      propertyPath: m_UseLightProbes
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3f5ce065477b04b81b46d93b7ab352db, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &370681736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,6 +2711,12 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_CustomBakedTexture: {fileID: 0}
+--- !u!114 &813839333 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11408892, guid: 3f5ce065477b04b81b46d93b7ab352db,
+    type: 2}
+  m_PrefabInternal: {fileID: 346008938}
+  m_Script: {fileID: 11500000, guid: 4cee199a468704522b08659b5219578f, type: 3}
 --- !u!1 &818913608
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,6 +4148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 2023876516}
+  playerHome: {fileID: 813839333}
 --- !u!95 &1139190137
 Animator:
   serializedVersion: 3
@@ -6355,7 +6408,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
       propertyPath: healthSlider
@@ -6367,7 +6420,7 @@ Prefab:
       objectReference: {fileID: 1394906873}
     - target: {fileID: 10800002, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
       propertyPath: m_BounceIntensity
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8200002, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
       propertyPath: panLevelCustomCurve.m_RotationOrder
