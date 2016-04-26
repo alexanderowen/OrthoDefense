@@ -31,10 +31,12 @@ public class PhaseManager : MonoBehaviour {
 
 	public void BeginAttackPhase() {
 		enemyManager.SetActive (true);
+		enemyManager.GetComponent<EnemyManager> ().BeginSpawning();
 		player.SetActive (true);
-		phaseText.text = "Attack Phase";
-		// TODO rebake nav mesh
 
+
+		// Do the animation thing again
+		phaseText.text = "Attack Phase";
 	}
 
 	void Update () {
