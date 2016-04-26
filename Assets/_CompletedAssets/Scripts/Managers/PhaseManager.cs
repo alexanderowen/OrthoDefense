@@ -30,10 +30,10 @@ public class PhaseManager : MonoBehaviour {
 
 	}
 
-	void BeginAttackPhase() {
+	public void BeginAttackPhase() {
 		enemyManager.SetActive (true);
 		phaseText.text = "Attack Phase";
-
+		// TODO rebake nav mesh
 		//enemyManager.BeginSpawning ();
 	}
 
