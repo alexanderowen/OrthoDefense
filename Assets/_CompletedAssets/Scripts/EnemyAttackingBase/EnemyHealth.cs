@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 
 public class EnemyHealth : MonoBehaviour
@@ -42,15 +43,24 @@ public class EnemyHealth : MonoBehaviour
     }
 
 
-    public void TakeDamage (int amount, Vector3 hitPoint)
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("TurretFire"))
+        {
+            TakeDamage(other.gameObject.GetComponent<TurretDamager>().damagePerHit, other.transform.position);
+        }
+    }
+
+    public void TakeDamage(int amount, Vector3 hitPoint)
     {
         // If the enemy is dead...
-        if(isDead)
+        if (isDead)
             // ... no need to take damage so exit the function.
             return;
 
         // Play the hurt sound effect.
         enemyAudio.Play ();
+
 
         // Reduce the current health by the amount of damage sustained.
         currentHealth -= amount;
