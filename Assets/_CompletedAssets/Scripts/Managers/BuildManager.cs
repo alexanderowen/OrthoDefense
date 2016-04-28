@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.Audio;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -9,11 +7,13 @@ using UnityEditor;
 public class BuildManager : MonoBehaviour {
 
 	private PhaseManager phaseManager;
+	private AudioSource backgroundmusic;
 
 	Canvas canvas;
 
 	void Start()
 	{
+		backgroundmusic = GameObject.Find ("BackgroundMusic").GetComponent<AudioSource> ();
 		canvas = GetComponent<Canvas>();
 		phaseManager = GameObject.Find("HUDCanvas").GetComponent<PhaseManager> ();
 	}
@@ -31,6 +31,7 @@ public class BuildManager : MonoBehaviour {
 
 	public void gameStart()
 	{
+		backgroundmusic.enabled = true;
 		phaseManager.IsBuildPhase = false;
 		phaseManager.BeginAttackPhase ();
 	}
