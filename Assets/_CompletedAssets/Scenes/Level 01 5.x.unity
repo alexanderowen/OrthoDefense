@@ -599,6 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3671c63a00060479f987e9817a650ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerprefab: {fileID: 100522, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
 --- !u!225 &177674579
 CanvasGroup:
   m_ObjectHideFlags: 0
