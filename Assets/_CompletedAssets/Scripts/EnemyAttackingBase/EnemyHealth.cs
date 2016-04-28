@@ -48,6 +48,10 @@ public class EnemyHealth : MonoBehaviour
         if (other.gameObject.CompareTag("TurretFire"))
         {
             TakeDamage(other.gameObject.GetComponent<TurretDamager>().damagePerHit, other.transform.position);
+            if (isDead)
+            {
+                other.gameObject.GetComponentInParent<TurretShooter>().enemyInRange = false;
+            }
         }
     }
 

@@ -544,6 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   shot: {fileID: 120580, guid: 7c513c2eaa79f8842a302e3362645912, type: 2}
+  enemyInRange: 0
 --- !u!135 &13536590
 SphereCollider:
   m_ObjectHideFlags: 1

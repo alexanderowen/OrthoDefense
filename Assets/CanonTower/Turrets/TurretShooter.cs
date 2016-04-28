@@ -6,7 +6,8 @@ public class TurretShooter : MonoBehaviour {
     public float fireRate;
     public GameObject shot;
 
-    private bool enemyInRange;
+    public bool enemyInRange;
+
     private float timer;
     private Transform enemyTransform;
     private Vector3 direction;
@@ -14,9 +15,16 @@ public class TurretShooter : MonoBehaviour {
 
     void Update()
     {
-        if(enemyInRange && Time.time > timer + fireRate)
+        if(enemyInRange)
         {
-            Shoot();
+            direction = enemyTransform.position - transform.position;
+            Vector3 lookDirection = new Vector3(direction.x, transform.position.y, direction.z);
+            transform.LookAt(lookDirection);
+
+            if (Time.time > timer + fireRate)
+            {
+                Shoot();
+            }
         }
     }
 
@@ -24,9 +32,22 @@ public class TurretShooter : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            enemyTransform = other.transform;
-            direction = transform.position - enemyTransform.position;
-            transform.LookAt(other.transform);
+            if (enemyTransform != null && enemyTransform.parent != null)
+            {
+                enemyInRange = true;
+
+                if (Vector3.Distance(transform.position, enemyTransform.position) > Vector3.Distance(transform.position, other.transform.position))
+                {
+                    enemyTransform = other.transform;
+                }
+            }
+            else
+            {
+                enemyTransform = other.transform;
+            }
+            direction = enemyTransform.position - transform.position;
+            Vector3 lookDirection = new Vector3(direction.x, transform.position.y, direction.z);
+            transform.LookAt(lookDirection);
             enemyInRange = true;
         }
     }
@@ -41,7 +62,7 @@ public class TurretShooter : MonoBehaviour {
 
     void Shoot()
     {
-        Instantiate(shot, transform.position, Quaternion.LookRotation(-direction));
+        Instantiate(shot, new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z + 1), Quaternion.LookRotation(direction));
         timer = Time.time;
     }
 }
