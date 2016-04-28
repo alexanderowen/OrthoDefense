@@ -22,6 +22,7 @@ public class TurretDamager : MonoBehaviour {
         if (Time.time < timer)
         {
             rb.AddForce(transform.forward * 50);
+			rb.AddForce (transform.up * 7);
         }
     }
 
