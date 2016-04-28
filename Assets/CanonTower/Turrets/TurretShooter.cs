@@ -13,13 +13,25 @@ public class TurretShooter : MonoBehaviour {
     private Vector3 direction;
     private Vector3 position;
 
+	/* TODO this code needs cleaned up;
+	 * I recommend using a priority queue to store turret enemy list
+	 * on trigger entry update priority queue with new enemy
+	 * on trigger exit remove entry from priority queue
+	 * while pq not empty turret focuses element 0
+	 * include logic each update to check if element 0 is null
+	 * if null remove from pq else perform turret look/shoot in update
+	 */
+
+
     void Update()
     {
-        if(enemyInRange)
+		if(enemyInRange)
         {
-            direction = enemyTransform.position - transform.position;
-            Vector3 lookDirection = new Vector3(direction.x, transform.position.y, direction.z);
-            transform.LookAt(lookDirection);
+			if (enemyTransform != null) {
+				direction = enemyTransform.position - transform.position;
+				Vector3 lookDirection = new Vector3 (direction.x, transform.position.y, direction.z);
+				transform.LookAt (lookDirection);
+			}
 
             if (Time.time > timer + fireRate)
             {

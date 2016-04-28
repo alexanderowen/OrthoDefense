@@ -50,7 +50,8 @@ public class EnemyHealth : MonoBehaviour
             TakeDamage(other.gameObject.GetComponent<TurretDamager>().damagePerHit, other.transform.position);
             if (isDead)
             {
-                other.gameObject.GetComponentInParent<TurretShooter>().enemyInRange = false;
+				if (other.gameObject.GetComponentInParent<TurretShooter>() != null)
+                	other.gameObject.GetComponentInParent<TurretShooter>().enemyInRange = false;
             }
         }
     }
@@ -116,6 +117,6 @@ public class EnemyHealth : MonoBehaviour
         ScoreManager.score += scoreValue;
 
         // After 2 seconds destory the enemy.
-        Destroy (gameObject, 2f);
+        Destroy (gameObject, 0.3f);
     }
 }
