@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 424264}
   - 33: {fileID: 3370984}
   - 23: {fileID: 2337932}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 409754}
   - 33: {fileID: 3375966}
   - 23: {fileID: 2357272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 452044}
   - 33: {fileID: 3356504}
   - 23: {fileID: 2353876}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 417270}
   - 33: {fileID: 3348378}
   - 23: {fileID: 2310432}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - 95: {fileID: 9562190}
   - 65: {fileID: 6579496}
   - 114: {fileID: 11448930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerHome
   m_TagString: Base
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - 4: {fileID: 485894}
   - 33: {fileID: 3390560}
   - 23: {fileID: 2365834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homeHealth: 500
   currentHomeHealth: 0
+  damageImage: {fileID: 0}
   homeHealthSlider: {fileID: 0}
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

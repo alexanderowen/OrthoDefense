@@ -163,7 +163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
 --- !u!1 &28357257
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +580,7 @@ GameObject:
   - 114: {fileID: 177674580}
   - 225: {fileID: 177674579}
   - 114: {fileID: 177674578}
+  - 95: {fileID: 177674583}
   m_Layer: 5
   m_Name: BuildCanvas
   m_TagString: Untagged
@@ -598,6 +599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3671c63a00060479f987e9817a650ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerLimit: 5
+  towerprefab: {fileID: 100522, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
 --- !u!225 &177674579
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -652,16 +655,33 @@ RectTransform:
   m_GameObject: {fileID: 177674577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1890745354}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &177674583
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 177674577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d33c02c0f04348d1b008c62c18ad2ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &226162766
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +733,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 235016029}
   - 65: {fileID: 235016030}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +838,7 @@ RectTransform:
   m_Children:
   - {fileID: 1979757894}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1241,7 +1261,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 294499754}
   - 65: {fileID: 294499755}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: FiretruckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1510,9 +1530,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 312239867}
-  m_Layer: 9
+  - 64: {fileID: 312239868}
+  m_Layer: 12
   m_Name: Environment (1)
-  m_TagString: Untagged
+  m_TagString: BuildArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1538,7 +1559,19 @@ Transform:
   - {fileID: 1446166236}
   - {fileID: 1718449917}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
+--- !u!64 &312239868
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312239866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 0}
 --- !u!1 &325982112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,49 +1727,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
---- !u!1001 &354147982
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -57.549812
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.0000053072526
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -44.520466
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-  m_IsPrefabParent: 0
+  m_RootOrder: 7
 --- !u!1 &370681736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2127,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 461218463}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300000, guid: 5b84db49d40ea449aa4f3e3bd229ab5b,
     type: 2}
@@ -2216,7 +2207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
 --- !u!1 &466686643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,7 +2808,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
 --- !u!1 &661131460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3098,7 +3089,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 746808411}
   - 65: {fileID: 746808412}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ClockCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3470,7 +3461,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 844100313}
   - 65: {fileID: 844100314}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3674,7 +3665,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 886696922}
   - 65: {fileID: 886696923}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: FiretruckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3817,7 +3808,7 @@ GameObject:
   - 33: {fileID: 915756814}
   - 23: {fileID: 915756813}
   - 65: {fileID: 915756812}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4055,7 +4046,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
 --- !u!1 &951677328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,7 +4097,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 952633480}
   - 65: {fileID: 952633481}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: LevelExtent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4147,7 +4138,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 958366183}
   - 65: {fileID: 958366184}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4229,7 +4220,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 986364717}
   - 65: {fileID: 986364718}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: FiretruckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4302,52 +4293,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6714668, y: 3.0484924, z: 1.128832}
   m_Center: {x: -0.4395647, y: 1.4388156, z: -0.34513283}
---- !u!1001 &999261792
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -43.914448
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.000006899466
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -57.876926
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 430326, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100522, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-      propertyPath: m_Name
-      value: Cannon Tower (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: fd75d12b3ea7547a9810b61f702df77c, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1038376789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,7 +4392,7 @@ GameObject:
   - 33: {fileID: 1038798093}
   - 23: {fileID: 1038798092}
   - 65: {fileID: 1038798091}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Hearse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4604,7 +4549,7 @@ MonoBehaviour:
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1108668141
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,7 +4873,7 @@ RectTransform:
   - {fileID: 1125301621}
   - {fileID: 375481248}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -5002,7 +4947,7 @@ GameObject:
   - 4: {fileID: 1140828478}
   - 33: {fileID: 1140828480}
   - 23: {fileID: 1140828479}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Clock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5109,7 +5054,7 @@ GameObject:
   - 4: {fileID: 1184260386}
   - 33: {fileID: 1184260388}
   - 23: {fileID: 1184260387}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Firetruck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5276,7 +5221,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1213436598}
   - 65: {fileID: 1213436599}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5317,7 +5262,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1220905866}
   - 65: {fileID: 1220905867}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5820,7 +5765,7 @@ Transform:
   - {fileID: 514994080}
   - {fileID: 1239087772}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
 --- !u!1001 &1293072145
 Prefab:
   m_ObjectHideFlags: 0
@@ -6424,7 +6369,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1336965021}
   - 65: {fileID: 1336965022}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6728,7 +6673,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1400017230}
   - 65: {fileID: 1400017231}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6925,7 +6870,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1415750197}
   - 65: {fileID: 1415750198}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7054,7 +6999,7 @@ GameObject:
   - 64: {fileID: 1434239553}
   m_Layer: 8
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7142,7 +7087,7 @@ GameObject:
   - 33: {fileID: 1446166239}
   - 23: {fileID: 1446166238}
   - 95: {fileID: 1446166237}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Arches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7272,7 +7217,7 @@ GameObject:
   - 4: {fileID: 1519444500}
   - 33: {fileID: 1519444502}
   - 23: {fileID: 1519444501}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7513,7 +7458,7 @@ GameObject:
   - 33: {fileID: 1576814168}
   - 23: {fileID: 1576814167}
   - 136: {fileID: 1576814166}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: SpinningTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7610,7 +7555,7 @@ Transform:
   - {fileID: 1695883714}
   - {fileID: 768239536}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 15
 --- !u!1 &1610303288
 GameObject:
   m_ObjectHideFlags: 0
@@ -7805,7 +7750,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
       propertyPath: healthSlider
@@ -8076,7 +8021,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1718449917}
   - 65: {fileID: 1718449918}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: WallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8134,7 +8079,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
 --- !u!1 &1776511254
 GameObject:
   m_ObjectHideFlags: 0
@@ -8253,7 +8198,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1785354246}
   - 65: {fileID: 1785354247}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8500,7 +8445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
 --- !u!114 &1851598983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8514,6 +8459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2023876510}
   smoothing: 5
+  phaseManager: {fileID: 0}
 --- !u!114 &1851598984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8880,7 +8826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.70000005, g: 0.65625, b: 0.875, a: 0.7882353}
+  m_Color: {r: 0.70000005, g: 0.65625, b: 0.875, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8910,7 +8856,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1901765318}
   - 65: {fileID: 1901765319}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8998,7 +8944,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1946715286}
   - 65: {fileID: 1946715287}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: LevelExtent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9349,7 +9295,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1998212461}
   - 65: {fileID: 1998212462}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9390,7 +9336,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1998758670}
   - 65: {fileID: 1998758671}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9441,7 +9387,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2043479721}
   - 65: {fileID: 2043479722}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: FiretruckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

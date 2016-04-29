@@ -14,11 +14,10 @@ public class EnemyMovementPlayer : MonoBehaviour
     {
         // Set up the references.
         player = GameObject.FindGameObjectWithTag ("Player").transform;
-		      playerHealth = player.GetComponent <PlayerHealth> ();
+		playerHealth = player.GetComponent <PlayerHealth> ();
         enemyHealth = GetComponent <EnemyHealth> ();
         nav = GetComponent <NavMeshAgent> ();
     }
-
 
     void Update ()
     {

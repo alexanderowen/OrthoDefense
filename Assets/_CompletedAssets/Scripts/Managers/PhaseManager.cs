@@ -32,6 +32,7 @@ public class PhaseManager : MonoBehaviour {
 
 		phaseText.text = "Start Build Phase";
 		anim.SetTrigger ("StartBuildPhase");
+		buildCanvas.GetComponent<Animator> ().SetTrigger ("FadeIn");
 	}
 
 	public void BeginAttackPhase() {
@@ -49,7 +50,7 @@ public class PhaseManager : MonoBehaviour {
 
 
 		// Do the animation thing again
-		phaseText.text = "Attack Phase";
+		phaseText.text = "";
 	}
 
 	void Update () {
