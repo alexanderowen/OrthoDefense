@@ -26,12 +26,12 @@ namespace CompleteProject
 			if (phaseManager.IsBuildPhase) {
 				RaycastHit hitter;
 				Ray ray = camera.ViewportPointToRay (new Vector3 (0.5f, 0.5f, 0f));
-				if (Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 12)) {
+				if (Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 9)) {
 					Vector3 direction = new Vector3 (Input.GetAxis ("Horizontal") * 6.5f * Time.deltaTime, Input.GetAxis ("Vertical") * 6.5f * Time.deltaTime, 0.0f);
 					transform.Translate (direction);
 
 					ray = camera.ViewportPointToRay (new Vector3 (0.5f, 0.5f, 0f));
-					if (!Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 12)) { 
+					if (!Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 9)) { 
 						direction = -direction;
 						transform.Translate(direction);
 					}

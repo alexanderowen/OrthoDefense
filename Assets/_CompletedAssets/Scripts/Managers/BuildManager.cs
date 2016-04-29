@@ -33,7 +33,7 @@ public class BuildManager : MonoBehaviour {
 				Vector3 wordPos;
 				Ray ray = Camera.main.ScreenPointToRay (mousePos);
 				RaycastHit hit;
-				if (Physics.Raycast (ray, out hit, Mathf.Infinity, 1 << 12)) {
+				if (Physics.Raycast (ray, out hit, Mathf.Infinity, 1 << 9)) {
 					wordPos = hit.point;
 					if (towerLimit > 0) {
 						Instantiate(towerprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)

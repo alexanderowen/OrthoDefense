@@ -50,7 +50,8 @@ public class PhaseManager : MonoBehaviour {
 
 
 		// Do the animation thing again
-		phaseText.text = "Attack Phase";
+		//phaseText.text = "Attack Phase";
+		phaseText.text = "";
 	}
 
 	void Update () {
