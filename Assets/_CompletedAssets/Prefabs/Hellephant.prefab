@@ -85,7 +85,7 @@ GameObject:
   - 114: {fileID: 11476006}
   m_Layer: 9
   m_Name: Hellephant
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,7 +260,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
-  attackDamage: 25
+  attackDamage: 10
 --- !u!114 &11476006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,7 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6caea90ce8e4c480b8762996397eff40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canFollowPlayer: 0
 --- !u!135 &13536644
 SphereCollider:
   m_ObjectHideFlags: 1
