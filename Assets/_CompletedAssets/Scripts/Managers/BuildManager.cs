@@ -8,8 +8,7 @@ public class BuildManager : MonoBehaviour {
 
 	private PhaseManager phaseManager;
 	private AudioSource backgroundmusic;
-	private GameObject tower;
-
+	public int towerLimit;
 	public GameObject towerprefab;
 
 	Canvas canvas;
@@ -21,29 +20,26 @@ public class BuildManager : MonoBehaviour {
 		phaseManager = GameObject.Find("HUDCanvas").GetComponent<PhaseManager> ();
 	}
 
-	void Update()
+	void Update ()
 	{
 		if (phaseManager.IsBuildPhase) {
 			canvas.enabled = true;
 
-			Vector3 mousePos=new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
+			Vector3 mousePos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0f);
 
-			if (tower != null)
-				tower.transform.position = mousePos;
-
-			if(Input.GetMouseButtonDown(0)) {
+			if (Input.GetMouseButtonDown (0)) {
 				Vector3 wordPos;
-				Ray ray=Camera.main.ScreenPointToRay(mousePos);
+				Ray ray = Camera.main.ScreenPointToRay (mousePos);
 				RaycastHit hit;
-				if(Physics.Raycast(ray,out hit,1000f)){
-					wordPos=hit.point;
+				if (Physics.Raycast (ray, out hit, Mathf.Infinity, 1 << 12)) {
+					wordPos = hit.point;
+					if (towerLimit > 0) {
+						Instantiate(towerprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
+						towerLimit--;
+					}
 				} else {
 					wordPos=Camera.main.ScreenToWorldPoint(mousePos);
-				}
-				if (hit.transform.tag == "Floor") {
-				}
-					Instantiate(towerprefab, wordPos, Quaternion.identity); 
-					//or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)						
+				}								
 			}
 		}
 	}

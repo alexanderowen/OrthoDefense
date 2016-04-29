@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - TurretFire
   - Floor
+  - BuildArea
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Shootable
   - LightMask
   - Invisible
-  - 
+  - BuildLayer
   - 
   - 
   - 
