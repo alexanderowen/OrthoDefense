@@ -10,18 +10,33 @@ namespace CompleteProject
 		public PhaseManager phaseManager;
 
         Vector3 offset;                     // The initial offset from the target.
+        Camera camera;
 
         void Start () {
             // Calculate the initial offset.
             offset = transform.position - target.position;
 
 			phaseManager = GameObject.Find ("HUDCanvas").GetComponent<PhaseManager> ();
+			camera = GetComponent <Camera>();
         }
 
-        void FixedUpdate () {
+		void FixedUpdate ()
+		{
+			
 			if (phaseManager.IsBuildPhase) {
-				transform.Translate(new Vector3(Input.GetAxis("Horizontal") * 6.5f * Time.deltaTime,
-											Input.GetAxis("Vertical") * 6.5f * Time.deltaTime, 0.0f));
+				RaycastHit hitter;
+				Ray ray = camera.ViewportPointToRay (new Vector3 (0.5f, 0.5f, 0f));
+				if (Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 12)) {
+					Vector3 direction = new Vector3 (Input.GetAxis ("Horizontal") * 6.5f * Time.deltaTime, Input.GetAxis ("Vertical") * 6.5f * Time.deltaTime, 0.0f);
+					transform.Translate (direction);
+
+					ray = camera.ViewportPointToRay (new Vector3 (0.5f, 0.5f, 0f));
+					if (!Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 12)) { 
+						direction = -direction;
+						transform.Translate(direction);
+					}
+
+				}
 				return;
 			}
 
