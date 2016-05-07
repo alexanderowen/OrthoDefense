@@ -4,13 +4,14 @@
 public class GameOverManager : MonoBehaviour {
     public PlayerHealth playerHealth;
 	public PlayerHome playerHome;
-	private GameObject player;
+	public GameObject player;
 
     Animator anim;
 
     void Awake () {
         anim = GetComponent <Animator> ();
-		player = GameObject.Find ("Player");
+		// Cause of error: reason unknown
+		//player = GameObject.Find ("Player");
 
     }
 

@@ -848,6 +848,10 @@ Prefab:
       propertyPath: buildCanvas
       value: 
       objectReference: {fileID: 177674577}
+    - target: {fileID: 11404096, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1811682858}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
   m_IsPrefabParent: 0
@@ -2009,6 +2013,10 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9432424, y: 1.6941614, z: 1.7055641}
   m_Center: {x: 0.39204618, y: -0.40992928, z: 0.5724878}
+--- !u!1 &1811682858 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100006, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+  m_PrefabInternal: {fileID: 1641232233}
 --- !u!1001 &1818993102
 Prefab:
   m_ObjectHideFlags: 0
