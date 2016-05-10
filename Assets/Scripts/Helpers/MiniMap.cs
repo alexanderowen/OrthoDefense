@@ -15,9 +15,9 @@ public class MiniMap : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetKeyDown("space"))
-            onPlayer = !onPlayer;
-
+		if (Input.GetKeyDown (KeyCode.LeftShift)) {
+			onPlayer = !onPlayer;
+		}
 
 		if (onPlayer) {
 			transform.position = player.transform.position;
