@@ -33,14 +33,16 @@ public class BuildManager : MonoBehaviour {
 				Vector3 wordPos;
 				Ray ray = Camera.main.ScreenPointToRay (mousePos);
 				RaycastHit hit;
-				if (Physics.Raycast (ray, out hit, Mathf.Infinity, 1 << 9)) {
-					wordPos = hit.point;
-					if (towerLimit > 0) {
-						Instantiate(towerprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
-						towerLimit--;
+				if (Physics.Raycast (ray, out hit)) {
+					if (hit.collider.tag == "Buildable") {
+						wordPos = hit.point;
+						if (towerLimit > 0) {
+							Instantiate (towerprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
+							towerLimit--;
+						} else {
+							wordPos = Camera.main.ScreenToWorldPoint (mousePos);
+						}
 					}
-				} else {
-					wordPos=Camera.main.ScreenToWorldPoint(mousePos);
 				}								
 			}
 		}
