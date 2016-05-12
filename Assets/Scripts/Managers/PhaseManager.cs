@@ -36,6 +36,8 @@ public class PhaseManager : MonoBehaviour {
 	}
 
 	public void BeginAttackPhase() {
+		GameObject nobuildzone = GameObject.Find ("NoBuildZone");
+		nobuildzone.SetActive (false);
 		enemyManager.SetActive (true);
 
 		foreach (EnemyManager enemy in enemyManager.GetComponents<EnemyManager> ()) {
