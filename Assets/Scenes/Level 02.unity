@@ -288,6 +288,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 191470, guid: f7aef05663bfe4cf3999abacf9d315d3, type: 2}
+      propertyPath: m_Name
+      value: Environment (North)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7aef05663bfe4cf3999abacf9d315d3, type: 2}
   m_IsPrefabParent: 0
@@ -1869,7 +1873,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
 --- !u!1 &1006712860 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 129266, guid: 8ae36bf8265cb4d2a9a99ecdd57b4d98, type: 2}
@@ -2601,7 +2605,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!1001 &1555632377
 Prefab:
   m_ObjectHideFlags: 0
@@ -2908,7 +2912,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 191470, guid: f7aef05663bfe4cf3999abacf9d315d3, type: 2}
       propertyPath: m_Name
-      value: Environment (2)
+      value: Environment (West)
       objectReference: {fileID: 0}
     - target: {fileID: 488590, guid: f7aef05663bfe4cf3999abacf9d315d3, type: 2}
       propertyPath: m_LocalRotation.y
@@ -3151,7 +3155,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1936414119}
   m_Layer: 9
-  m_Name: Environment (1)
+  m_Name: Environment (Corner)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3179,7 +3183,7 @@ Transform:
   - {fileID: 78945189}
   - {fileID: 714783419}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1001 &1950546092
 Prefab:
   m_ObjectHideFlags: 0

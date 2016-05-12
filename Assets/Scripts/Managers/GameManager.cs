@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
 	public static GameManager instance = null;
+	public int currentLevel = 1;
+	public int finalLevel = 5;
 
 	void Awake () {
 		if (instance == null) {
@@ -14,13 +16,24 @@ public class GameManager : MonoBehaviour {
 		}
 
 		DontDestroyOnLoad(gameObject); // When reloading the scene, don't destroy this.
+	}
+		
+	public void GoToNextLevel() {
+		if (currentLevel == finalLevel) {
+			GameComplete ();
+			return;
+		}
+		currentLevel++;
 
-		InitGame ();
+		string sceneName = "Level 0" + currentLevel.ToString();
+		SceneManager.LoadScene (sceneName);
+
 	}
 
-	void InitGame() {
+	void GameComplete() {
+
+
 	}
-	
 
 	void Update () {	
 	}

@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
+//This class is used for the splash screen.
+
 public class MenuScript : MonoBehaviour {
 
 	void Start(){}

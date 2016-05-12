@@ -341,7 +341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
 --- !u!1001 &148589745
 Prefab:
   m_ObjectHideFlags: 0
@@ -1726,7 +1726,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!1001 &751272783
 Prefab:
   m_ObjectHideFlags: 0
@@ -2762,7 +2762,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1370002739}
   m_Layer: 9
-  m_Name: Environment (1)
+  m_Name: Environment (Central)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2785,7 +2785,7 @@ Transform:
   - {fileID: 1535213753}
   - {fileID: 1596910220}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1382334927 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 153992, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
@@ -3801,7 +3801,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1870860376}
   m_Layer: 9
-  m_Name: Environment (2)
+  m_Name: Environment (South)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4485,7 +4485,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 450078, guid: 4109f183eaf974dad9c2d1c22efdff35, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 450078, guid: 4109f183eaf974dad9c2d1c22efdff35, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4509,7 +4509,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 450078, guid: 4109f183eaf974dad9c2d1c22efdff35, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4109f183eaf974dad9c2d1c22efdff35, type: 2}
@@ -4597,6 +4597,10 @@ Prefab:
     - target: {fileID: 406856, guid: f7aef05663bfe4cf3999abacf9d315d3, type: 2}
       propertyPath: m_LocalScale.x
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 191470, guid: f7aef05663bfe4cf3999abacf9d315d3, type: 2}
+      propertyPath: m_Name
+      value: Environment (North)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7aef05663bfe4cf3999abacf9d315d3, type: 2}
