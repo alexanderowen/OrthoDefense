@@ -6,8 +6,8 @@ using UnityEditor;
 
 public class BuildManager : MonoBehaviour {
 
-	public int cannonlimit;
-	public int magelimit;
+	public static int cannonlimit = 2;
+	public static int magelimit = 2;
 	public GameObject towerprefab;
 	public GameObject mageprefab;
 

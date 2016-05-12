@@ -9,7 +9,8 @@ public class EnemyHealth : MonoBehaviour
     public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
     public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
     public AudioClip deathClip;                 // The sound to play when the enemy dies.
-    public bool isZapped;
+	public GameObject redScroll;
+	public GameObject blueScroll;
 
 
     Animator anim;                              // Reference to the animator.
@@ -18,7 +19,6 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead;                                // Whether the enemy is dead.
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
-    
 
 
     void Awake ()
@@ -42,10 +42,6 @@ public class EnemyHealth : MonoBehaviour
             // ... move the enemy down by the sinkSpeed per second.
             transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
         }
-        if (isZapped)
-        {
-            TakeLightningDamage(5, 1, transform.position);
-        }
     }
 
 
@@ -59,32 +55,6 @@ public class EnemyHealth : MonoBehaviour
 				if (other.gameObject.GetComponentInParent<TurretShooter>() != null)
                 	other.gameObject.GetComponentInParent<TurretShooter>().enemyInRange = false;
             }
-        }
-    }
-
-    public void TakeLightningDamage(int amount, double fireRate, Vector3 pos)
-    {
-        float timer = 0;
-
-        if (isDead)
-        {
-            isZapped = false;
-            return;
-        }
-        enemyAudio.Play();
-
-        if(Time.time > timer + fireRate)
-        {
-            currentHealth -= amount;
-            hitParticles.transform.position = pos;
-            hitParticles.Play();
-            timer = Time.time;
-        }
-
-        if(currentHealth <= 0)
-        {
-            Death();
-            isZapped = false;
         }
     }
 
@@ -131,6 +101,18 @@ public class EnemyHealth : MonoBehaviour
         // Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
         enemyAudio.clip = deathClip;
         enemyAudio.Play ();
+		if (this.transform.name.StartsWith("Hell")) {
+			Vector3 deathPos = this.transform.position;
+			deathPos.y += 1;
+			if (Random.value > 0) {
+				if (Random.value < .5) {
+					Instantiate (redScroll, deathPos, Quaternion.identity);
+				} else {
+					Instantiate (blueScroll, deathPos, Quaternion.identity);
+				}
+			}
+		}
+		
     }
 
 

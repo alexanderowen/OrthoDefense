@@ -338,6 +338,8 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
+  redScroll: {fileID: 128496, guid: deade97b943994915906b12f69fd1978, type: 2}
+  blueScroll: {fileID: 195396, guid: 66f04bb8c60a24ce0bf6c048d50b4d22, type: 2}
 --- !u!114 &11418382
 MonoBehaviour:
   m_ObjectHideFlags: 1
