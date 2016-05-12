@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - TurretFire
   - Floor
+  - Buildable
   layers:
   - Default
   - TransparentFX
