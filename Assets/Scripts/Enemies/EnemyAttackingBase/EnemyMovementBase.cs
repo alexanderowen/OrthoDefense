@@ -10,14 +10,14 @@ public class EnemyMovementBase : MonoBehaviour
 	PlayerHealth playerHealth;      // Reference to the player's health.
     EnemyHealth enemyHealth;        // Reference to this enemy's health.
     NavMeshAgent nav;               // Reference to the nav mesh agent.
-	bool playerNearby;				// Is the player nearby?
+	bool playerLockOn;				// Is the enemy locked onto the player?
 	public bool canFollowPlayer;	// Some enemies will target the player if he's close enough, others will not. 	
 									// This boolean will determine that.
 
     void Awake ()
     {
         // Set up the references.
-		playerNearby = false;
+		playerLockOn = false;
 		homeBase = GameObject.FindGameObjectWithTag ("Base").transform;
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
 		homeHealth = homeBase.GetComponent <PlayerHome> ();
@@ -31,11 +31,11 @@ public class EnemyMovementBase : MonoBehaviour
 		if (canFollowPlayer) {
 			float dist = Vector3.Distance (player.position, transform.position);
 			if (dist < 9) {
-				playerNearby = true;
+				playerLockOn = true;
 			}
 		}
 		// If the player is nearby the enemy, the enemy will focus, follow, and attack the player.
-		if (playerNearby) {
+		if (playerLockOn) {
 			if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0) {
 				nav.SetDestination (player.position);
 			}
@@ -53,4 +53,8 @@ public class EnemyMovementBase : MonoBehaviour
             nav.enabled = false;
         }
     }
+
+	public bool isPlayerLockedOn(){
+		return playerLockOn;
+	}
 }

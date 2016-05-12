@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: EyesMaterial
+  m_Name: DasherMaterial
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _LIGHTMAPPING_REALTIME
-    _UVSEC_UV1
+  m_ShaderKeywords: _EMISSION _EMISSIONMAP _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _LIGHTMAPPING_REALTIME
+    _NORMALMAP _SPECGLOSSMAP _UVSEC_UV1
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -20,14 +20,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: cb2f40e3f21fc47bf80bebd2611b6a32, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: f4ace6e739d7944d28607ef057caea2e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -41,7 +41,7 @@ Material:
         first:
           name: _EmissionMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 1f28fd8a369684dca898ddfcda85f1b9, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -55,14 +55,14 @@ Material:
         first:
           name: _Occlusion
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: f592d534af6aced4784d9e55b1d3a8c7, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _SpecGlossMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 154576fb7136442f29b616952ea93beb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -83,7 +83,7 @@ Material:
         first:
           name: _OcclusionMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: f592d534af6aced4784d9e55b1d3a8c7, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -106,7 +106,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: 0.20665379
+        second: 0.1829303
       data:
         first:
           name: _Lightmapping
@@ -122,7 +122,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.576
+        second: 0.6
       data:
         first:
           name: _BumpScale
@@ -146,32 +146,32 @@ Material:
       data:
         first:
           name: _EmissionScaleUI
-        second: 1
+        second: 0.6
       data:
         first:
           name: _RimPower
-        second: 3
+        second: 2.3303568
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0.3088235, g: 0.3088235, b: 0.3088235, a: 0.99999994}
+        second: {r: 0.6, g: 0.6, b: 0.6, a: 0.6}
       data:
         first:
           name: _Color
-        second: {r: 0.17656715, g: 1, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: 0.3924474, g: 1, b: 0.112130895, a: 1}
+        second: {r: 0.283737, g: 0.2845931, b: 0.30147058, a: 1}
       data:
         first:
           name: _SpecularColor
-        second: {r: 0.49264705, g: 0.49264705, b: 0.49264705, a: 1}
+        second: {r: 0.22794116, g: 0.22794116, b: 0.22794116, a: 1}
       data:
         first:
           name: _EmissionColorUI
-        second: {r: 0.30882353, g: 0.30882353, b: 0.30882353, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _EmissionColorWithMapUI
@@ -179,4 +179,4 @@ Material:
       data:
         first:
           name: _RimColor
-        second: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+        second: {r: 0.19007264, g: 0.18425605, b: 0.35294116, a: 0}

@@ -14,6 +14,7 @@ public class EnemyAttackBase : MonoBehaviour
 	GameObject player;                          // Reference to the player GameObject.
 	PlayerHealth playerHealth;                  // Reference to the player's health.
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
+	EnemyMovementBase movement;					// Reference to this enemy's movement.
     bool InRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
 
@@ -26,6 +27,7 @@ public class EnemyAttackBase : MonoBehaviour
 		playerHealth = player.GetComponent <PlayerHealth> ();
         homeBaseHealth = homeBase.GetComponent <PlayerHome> ();
         enemyHealth = GetComponent<EnemyHealth>();
+		movement = GetComponent<EnemyMovementBase> ();
         anim = GetComponent <Animator> ();
     }
 
@@ -79,13 +81,13 @@ public class EnemyAttackBase : MonoBehaviour
         timer = 0f;
 
         // If the base has health to lose...
-        if(homeBaseHealth.currentHomeHealth > 0)
+		if(homeBaseHealth.currentHomeHealth > 0 && !movement.isPlayerLockedOn())
         {
             // ... damage the base.
 			homeBaseHealth.DamageHome(attackDamage);
         }
 		// If the player has health to lose...
-		else if(playerHealth.currentHealth > 0)
+		else if(playerHealth.currentHealth > 0 && movement.isPlayerLockedOn())
 		{
 			// ... damage the player.
 			playerHealth.TakeDamage(attackDamage);
