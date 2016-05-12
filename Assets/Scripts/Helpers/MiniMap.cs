@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MiniMap : MonoBehaviour {
 
-	public Light light;
+	public Light _light;
 
 	bool onPlayer;
 	public GameObject player;
@@ -30,13 +30,13 @@ public class MiniMap : MonoBehaviour {
 
 	void OnPreCull ()
 	{
-		light.enabled = false;
+		_light.enabled = false;
 	}
 
 	void OnPreRender() {
-		light.enabled = false;
+		_light.enabled = false;
 	}
 	void OnPostRender() {
-		light.enabled = true;
+		_light.enabled = true;
 	}
 }

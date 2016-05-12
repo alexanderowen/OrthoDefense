@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     public AudioClip deathClip;                 // The sound to play when the enemy dies.
 	public GameObject redScroll;
 	public GameObject blueScroll;
+	public bool isZapped;
 
 
     Animator anim;                              // Reference to the animator.
@@ -42,6 +43,10 @@ public class EnemyHealth : MonoBehaviour
             // ... move the enemy down by the sinkSpeed per second.
             transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
         }
+		if (isZapped)
+		{
+			TakeLightningDamage(5, 1, transform.position);
+		}
     }
 
 
@@ -57,6 +62,32 @@ public class EnemyHealth : MonoBehaviour
             }
         }
     }
+
+	public void TakeLightningDamage(int amount, double fireRate, Vector3 pos)
+	{
+		float timer = 0;
+
+		if (isDead)
+		{
+			isZapped = false;
+			return;
+		}
+		enemyAudio.Play();
+
+		if(Time.time > timer + fireRate)
+		{
+			currentHealth -= amount;
+			hitParticles.transform.position = pos;
+			hitParticles.Play();
+			timer = Time.time;
+		}
+
+		if(currentHealth <= 0)
+		{
+			Death();
+			isZapped = false;
+		}
+	}
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
