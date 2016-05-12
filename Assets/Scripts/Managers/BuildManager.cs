@@ -6,20 +6,33 @@ using UnityEditor;
 
 public class BuildManager : MonoBehaviour {
 
+	public int cannonlimit;
+	public int magelimit;
+	public GameObject towerprefab;
+	public GameObject mageprefab;
+
 	private PhaseManager phaseManager;
 	private AudioSource backgroundmusic;
-	public int towerLimit;
-	public GameObject towerprefab;
+	private Button cannonbutton;
+	private Button magebutton;
 	private bool buildPhase;
+	private bool magetower;
+	private bool cannontower;
 
 	Canvas canvas;
 
 	void Start()
 	{
 		backgroundmusic = GameObject.Find ("BackgroundMusic").GetComponent<AudioSource> ();
-		canvas = GetComponent<Canvas>();
 		phaseManager = GameObject.Find("HUDCanvas").GetComponent<PhaseManager> ();
-		buildPhase = false;
+		cannonbutton = GameObject.Find ("CannonButton").GetComponent<Button> ();
+		magebutton = GameObject.Find ("MageButton").GetComponent<Button> ();
+		cannonbutton.GetComponentInChildren<Text> ().text = cannonlimit.ToString ();
+		magebutton.GetComponentInChildren<Text> ().text = magelimit.ToString ();
+		canvas = GetComponent<Canvas>();
+		magetower = false;
+		cannontower = false;
+		buildPhase = true;
 	}
 
 	void Update ()
@@ -30,17 +43,24 @@ public class BuildManager : MonoBehaviour {
 			Vector3 mousePos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0f);
 
 			if (Input.GetMouseButtonDown (0)) {
-				Vector3 wordPos;
-				Ray ray = Camera.main.ScreenPointToRay (mousePos);
-				RaycastHit hit;
-				if (Physics.Raycast (ray, out hit)) {
-					if (hit.collider.tag == "Buildable") {
-						wordPos = hit.point;
-						if (towerLimit > 0) {
-							Instantiate (towerprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
-							towerLimit--;
-						} else {
-							wordPos = Camera.main.ScreenToWorldPoint (mousePos);
+				if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() == false) {
+					Vector3 wordPos;
+					Ray ray = Camera.main.ScreenPointToRay (mousePos);
+					RaycastHit hit;
+					if (Physics.Raycast (ray, out hit)) {
+						if (hit.collider.tag == "Buildable") {
+							wordPos = hit.point;
+							if (cannontower && cannonlimit > 0) {
+								Instantiate (towerprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
+								cannonlimit--;
+								cannonbutton.GetComponentInChildren<Text> ().text = cannonlimit.ToString ();
+							} else if (magetower && magelimit > 0) {
+								Instantiate (mageprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
+								magelimit--;
+								magebutton.GetComponentInChildren<Text> ().text = magelimit.ToString ();
+							} else {
+								wordPos = Camera.main.ScreenToWorldPoint (mousePos);
+							}
 						}
 					}
 				}								
@@ -50,9 +70,16 @@ public class BuildManager : MonoBehaviour {
 
 
 	public void spawnTower() {
-		buildPhase = !buildPhase;
+		if (magetower)
+			magetower = false;
+		cannontower = !cannontower;
 	}
 
+	public void mageTower() {
+		if (cannontower)
+			cannontower = false;
+		magetower = !magetower;
+	}
 
 	public void gameStart()
 	{
