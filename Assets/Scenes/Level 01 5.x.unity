@@ -123,7 +123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440574, guid: f7aef05663bfe4cf3999abacf9d315d3, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 191470, guid: f7aef05663bfe4cf3999abacf9d315d3, type: 2}
       propertyPath: m_IsActive
@@ -169,7 +169,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 447136, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: playerHealth
@@ -296,7 +296,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463426, guid: 789b16ff139ce415e9c1069590df3c9e, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 188020, guid: 789b16ff139ce415e9c1069590df3c9e, type: 2}
       propertyPath: m_IsActive
@@ -653,7 +653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22419528, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 22419528, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -826,10 +826,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 13628458, guid: 69e5bdab1447cb74bb23526e116d0131, type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69e5bdab1447cb74bb23526e116d0131, type: 2}
   m_IsPrefabParent: 0
@@ -944,7 +940,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 464700, guid: a85f41bd91dcb4884810a1092df59f79, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 138562, guid: a85f41bd91dcb4884810a1092df59f79, type: 2}
       propertyPath: m_IsActive
@@ -1031,7 +1027,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 442808, guid: c600569e849f94d1e9c0cfc03c311b94, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 161166, guid: c600569e849f94d1e9c0cfc03c311b94, type: 2}
       propertyPath: m_IsActive
@@ -1077,7 +1073,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22466202, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 22466202, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -2322,7 +2318,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
       propertyPath: healthSlider
@@ -2964,7 +2960,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 456380, guid: f5194fb6482714e04bc795c4f264fbdf, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 187596, guid: f5194fb6482714e04bc795c4f264fbdf, type: 2}
       propertyPath: m_IsActive
@@ -3143,7 +3139,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22443858, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 22443858, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchoredPosition.x
