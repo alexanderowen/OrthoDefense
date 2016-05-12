@@ -7,7 +7,7 @@ public class TurretDamager : MonoBehaviour {
     public float forceTime;
 
     private EnemyHealth enemyHealth;
-    private Renderer renderer;
+    private new Renderer renderer;
     private Rigidbody rb;
     private float timer;
 
