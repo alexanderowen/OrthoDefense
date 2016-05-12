@@ -971,7 +971,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 450078, guid: 4109f183eaf974dad9c2d1c22efdff35, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 450078, guid: 4109f183eaf974dad9c2d1c22efdff35, type: 2}
       propertyPath: m_LocalPosition.z
@@ -995,7 +995,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 450078, guid: 4109f183eaf974dad9c2d1c22efdff35, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4109f183eaf974dad9c2d1c22efdff35, type: 2}
@@ -1609,9 +1609,9 @@ GameObject:
   - 33: {fileID: 810968125}
   - 23: {fileID: 810968124}
   - 65: {fileID: 810968123}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Buildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967291
