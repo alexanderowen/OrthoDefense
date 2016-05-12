@@ -10,7 +10,7 @@ namespace CompleteProject
 		public PhaseManager phaseManager;
 
         Vector3 offset;                     // The initial offset from the target.
-        Camera camera;
+        new Camera camera;
 
         void Start () {
             // Calculate the initial offset.
