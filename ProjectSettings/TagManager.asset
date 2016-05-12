@@ -10,6 +10,7 @@ TagManager:
   - TurretFire
   - Floor
   - Buildable
+  - Pickup
   layers:
   - Default
   - TransparentFX
