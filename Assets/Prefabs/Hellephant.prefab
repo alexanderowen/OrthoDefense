@@ -80,9 +80,9 @@ GameObject:
   - 195: {fileID: 19546556}
   - 135: {fileID: 13536644}
   - 136: {fileID: 13644992}
-  - 114: {fileID: 11402556}
   - 114: {fileID: 11418382}
   - 114: {fileID: 11476006}
+  - 114: {fileID: 11449824}
   m_Layer: 9
   m_Name: Hellephant
   m_TagString: Enemy
@@ -322,25 +322,6 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11402556
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa10cc87aff30c04dbe0aa648f5b6adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 300
-  currentHealth: 0
-  sinkSpeed: 2.5
-  scoreValue: 50
-  deathClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
-  redScroll: {fileID: 128496, guid: deade97b943994915906b12f69fd1978, type: 2}
-  blueScroll: {fileID: 195396, guid: 66f04bb8c60a24ce0bf6c048d50b4d22, type: 2}
-  isZapped: 0
 --- !u!114 &11418382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,6 +335,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
   attackDamage: 25
+--- !u!114 &11449824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30cade89e859e49d8878f1d97b531d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 200
+  currentHealth: 0
+  sinkSpeed: 2.5
+  scoreValue: 10
+  deathClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
+  redScroll: {fileID: 128496, guid: deade97b943994915906b12f69fd1978, type: 2}
+  blueScroll: {fileID: 195396, guid: 66f04bb8c60a24ce0bf6c048d50b4d22, type: 2}
+  isZapped: 0
 --- !u!114 &11476006
 MonoBehaviour:
   m_ObjectHideFlags: 1
