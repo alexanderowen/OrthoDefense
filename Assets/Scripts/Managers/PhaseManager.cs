@@ -57,6 +57,6 @@ public class PhaseManager : MonoBehaviour {
 	}
 
 	void Update () {
-	
+		
 	}
 }

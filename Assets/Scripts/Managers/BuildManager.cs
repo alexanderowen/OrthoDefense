@@ -10,6 +10,7 @@ public class BuildManager : MonoBehaviour {
 	public static int magelimit = 2;
 	public GameObject towerprefab;
 	public GameObject mageprefab;
+	public Camera miniMap;
 
 	private PhaseManager phaseManager;
 	private AudioSource backgroundmusic;
@@ -27,12 +28,14 @@ public class BuildManager : MonoBehaviour {
 		phaseManager = GameObject.Find("HUDCanvas").GetComponent<PhaseManager> ();
 		cannonbutton = GameObject.Find ("CannonButton").GetComponent<Button> ();
 		magebutton = GameObject.Find ("MageButton").GetComponent<Button> ();
+		//miniMap = GameObject.Find("MiniMap").GetComponent<MiniMap> ();
 		cannonbutton.GetComponentInChildren<Text> ().text = cannonlimit.ToString ();
 		magebutton.GetComponentInChildren<Text> ().text = magelimit.ToString ();
 		canvas = GetComponent<Canvas>();
 		magetower = false;
 		cannontower = false;
 		buildPhase = true;
+		miniMap.enabled = false;
 	}
 
 	void Update ()
@@ -66,6 +69,8 @@ public class BuildManager : MonoBehaviour {
 				}								
 			}
 		}
+		if (miniMap.enabled)
+			miniMap.enabled = false;
 	}
 
 
@@ -86,6 +91,7 @@ public class BuildManager : MonoBehaviour {
 		backgroundmusic.enabled = true;
 		phaseManager.IsBuildPhase = false;
 		phaseManager.BeginAttackPhase ();
+		miniMap.enabled = true;
 	}
 
 	public void helpMesh() {
