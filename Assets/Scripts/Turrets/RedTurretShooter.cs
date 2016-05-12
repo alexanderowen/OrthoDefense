@@ -60,7 +60,7 @@ public class RedTurretShooter : MonoBehaviour {
         {
             enemy.GetComponent<EnemyHealth>().isZapped = true;
 
-            lr.SetPosition(0, this.transform.position);
+            lr.SetPosition(0, new Vector3(this.transform.position.x, this.transform.position.y + 5.8f, this.transform.position.z));
             lr.SetPosition(1, enemy.transform.position);
         }
         else

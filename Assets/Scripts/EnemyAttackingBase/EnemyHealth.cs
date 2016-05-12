@@ -44,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
         }
         if (isZapped)
         {
-            TakeLightningDamage(25, 4, transform.position);
+            TakeLightningDamage(5, 1, transform.position);
         }
     }
 
@@ -80,6 +80,7 @@ public class EnemyHealth : MonoBehaviour
             hitParticles.Play();
             timer = Time.time;
         }
+
         if(currentHealth <= 0)
         {
             Death();
