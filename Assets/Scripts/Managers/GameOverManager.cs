@@ -22,6 +22,7 @@ public class GameOverManager : MonoBehaviour {
 
         // If the player or playerHome has run out of health...
 		if(playerHealth.currentHealth <= 0 || playerHome.currentHomeHealth <= 0) {
+			playerHealth.Death ();
             anim.SetTrigger ("GameOver");
         }
     }

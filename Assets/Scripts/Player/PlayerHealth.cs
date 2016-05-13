@@ -79,7 +79,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    void Death ()
+    public void Death ()
     {
         // Set the death flag so this function won't be called again.
         isDead = true;

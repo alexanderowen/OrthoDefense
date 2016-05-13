@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour {
 			GameComplete ();
 			return;
 		}
+
 		currentLevel++;
 
 		string sceneName = "Level 0" + currentLevel.ToString();
@@ -41,8 +42,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void GameComplete() {
-
-
+		// TODO: YOU WIN text.
+		SceneManager.LoadScene ("Load Screen");
 	}
 
 	void Update () {	
