@@ -352,7 +352,7 @@ MonoBehaviour:
   startingHealth: 2000
   currentHealth: 0
   sinkSpeed: 2.5
-  scoreValue: 10
+  scoreValue: 9001
   deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
   redScroll: {fileID: 128496, guid: deade97b943994915906b12f69fd1978, type: 2}
   blueScroll: {fileID: 195396, guid: 66f04bb8c60a24ce0bf6c048d50b4d22, type: 2}
