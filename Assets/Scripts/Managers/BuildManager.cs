@@ -28,7 +28,6 @@ public class BuildManager : MonoBehaviour {
 		phaseManager = GameObject.Find("HUDCanvas").GetComponent<PhaseManager> ();
 		cannonbutton = GameObject.Find ("CannonButton").GetComponent<Button> ();
 		magebutton = GameObject.Find ("MageButton").GetComponent<Button> ();
-		//miniMap = GameObject.Find("MiniMap").GetComponent<MiniMap> ();
 		cannonbutton.GetComponentInChildren<Text> ().text = cannonlimit.ToString ();
 		magebutton.GetComponentInChildren<Text> ().text = magelimit.ToString ();
 		canvas = GetComponent<Canvas>();

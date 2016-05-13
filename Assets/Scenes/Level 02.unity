@@ -3500,6 +3500,10 @@ Prefab:
       propertyPath: _light
       value: 
       objectReference: {fileID: 856788711}
+    - target: {fileID: 2099052, guid: 556aad353675745a599edba7de06e97f, type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 556aad353675745a599edba7de06e97f, type: 2}
   m_IsPrefabParent: 0
