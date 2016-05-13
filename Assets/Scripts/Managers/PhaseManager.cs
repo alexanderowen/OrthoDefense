@@ -56,6 +56,11 @@ public class PhaseManager : MonoBehaviour {
 		phaseText.text = "";
 	}
 
+	public void MoveToNextLevel() {
+		GameManager GM = GameObject.Find ("GameManager").GetComponent<GameManager> ();
+		GM.GoToNextLevel ();
+	}
+
 	void Update () {
 		
 	}

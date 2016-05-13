@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public int currentLevel = 1;
 	public int finalLevel = 5;
 
+
 	void Awake () {
 		if (instance == null) {
 			instance = this;
@@ -16,6 +17,15 @@ public class GameManager : MonoBehaviour {
 		}
 
 		DontDestroyOnLoad(gameObject); // When reloading the scene, don't destroy this.
+
+	}
+
+	public void LevelComplete() {
+		Animator anim = GameObject.Find ("HUDCanvas").GetComponent<Animator> ();
+		anim.SetTrigger ("LevelComplete");
+
+		// Play Animator
+		// Within animator, call GoToNextLevel. 
 	}
 		
 	public void GoToNextLevel() {
