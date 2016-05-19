@@ -16,7 +16,7 @@ public class PlayerShooting : MonoBehaviour
     int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
     ParticleSystem gunParticles;                    // Reference to the particle system.
     LineRenderer gunLine;                           // Reference to the line renderer.
-    AudioSource gunAudio;                           // Reference to the audio source.
+	AudioSource[] gunShotClips;
     Light gunLight;                                 // Reference to the light component.
 	public Light faceLight;								// Duh
     float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
@@ -32,10 +32,12 @@ public class PlayerShooting : MonoBehaviour
 		public int damagePerShot;
 		public float timeBetweenBullets;
     	public float range;
-    	public GunClass (int _damage, float _time, float _range) {
+		public AudioSource gunShotClip;
+		public GunClass (int _damage, float _time, float _range, AudioSource _audio) {
 			damagePerShot = _damage;
 			timeBetweenBullets = _time;
     		range = _range;
+			gunShotClip = _audio;
     	}
     }
 
@@ -49,13 +51,13 @@ public class PlayerShooting : MonoBehaviour
         // Set up the references.
         gunParticles = GetComponent<ParticleSystem> ();
         gunLine = GetComponent <LineRenderer> ();
-        gunAudio = GetComponent<AudioSource> ();
+		gunShotClips = GetComponents<AudioSource> ();
         gunLight = GetComponent<Light> ();
 		//faceLight = GetComponentInChildren<Light> ();
 
-		gunList [0] = new GunClass (20, 0.15f, 32f); // Rifle
-		gunList [1] = new GunClass (50, 0.8f, 15f); // Shotgun
-		gunList [2] = new GunClass (200, 1.5f, 100f); // Laser
+		gunList [0] = new GunClass (20, 0.15f, 32f, gunShotClips[0]); // Rifle
+		gunList [1] = new GunClass (50, 0.8f, 15f, gunShotClips[1]); // Shotgun
+		gunList [2] = new GunClass (200, 1.5f, 100f, gunShotClips[2]); // Laser
 		gunType = Gun.Rifle;
     }
 
@@ -117,7 +119,7 @@ public class PlayerShooting : MonoBehaviour
 		timer = 0f;
 
 		// Play the gun shot audioclip.
-		gunAudio.Play ();
+		gunList[(int)gunType].gunShotClip.Play();
 
 		// Enable the lights.
 		gunLight.enabled = true;
