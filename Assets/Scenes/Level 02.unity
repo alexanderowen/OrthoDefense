@@ -4542,7 +4542,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463426, guid: 789b16ff139ce415e9c1069590df3c9e, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 477442, guid: 789b16ff139ce415e9c1069590df3c9e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -5556,10 +5556,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11417242, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: mageprefab
-      value: 
-      objectReference: {fileID: 176682, guid: 69e5bdab1447cb74bb23526e116d0131, type: 2}
     - target: {fileID: 11417242, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
       propertyPath: miniMap
       value: 

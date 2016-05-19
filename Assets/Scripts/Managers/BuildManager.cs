@@ -14,6 +14,7 @@ public class BuildManager : MonoBehaviour {
 
 	private PhaseManager phaseManager;
 	private AudioSource backgroundmusic;
+	private AudioSource towerBuildAudio;
 	private Button cannonbutton;
 	private Button magebutton;
 	private bool buildPhase;
@@ -25,6 +26,7 @@ public class BuildManager : MonoBehaviour {
 	void Start()
 	{
 		backgroundmusic = GameObject.Find ("BackgroundMusic").GetComponent<AudioSource> ();
+		towerBuildAudio = GetComponent<AudioSource> ();
 		phaseManager = GameObject.Find("HUDCanvas").GetComponent<PhaseManager> ();
 		cannonbutton = GameObject.Find ("CannonButton").GetComponent<Button> ();
 		magebutton = GameObject.Find ("MageButton").GetComponent<Button> ();
@@ -56,10 +58,12 @@ public class BuildManager : MonoBehaviour {
 								Instantiate (towerprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
 								cannonlimit--;
 								cannonbutton.GetComponentInChildren<Text> ().text = cannonlimit.ToString ();
+								towerBuildAudio.Play ();
 							} else if (magetower && magelimit > 0) {
 								Instantiate (mageprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
 								magelimit--;
 								magebutton.GetComponentInChildren<Text> ().text = magelimit.ToString ();
+								towerBuildAudio.Play ();
 							} else {
 								wordPos = Camera.main.ScreenToWorldPoint (mousePos);
 							}
