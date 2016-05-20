@@ -60,7 +60,7 @@ public class BuildManager : MonoBehaviour {
 								cannonbutton.GetComponentInChildren<Text> ().text = cannonlimit.ToString ();
 								towerBuildAudio.Play ();
 							} else if (magetower && magelimit > 0) {
-								Instantiate (mageprefab, wordPos, Quaternion.identity); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
+								Instantiate (mageprefab, wordPos, Quaternion.Euler(0, 60, 0)); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
 								magelimit--;
 								magebutton.GetComponentInChildren<Text> ().text = magelimit.ToString ();
 								towerBuildAudio.Play ();
