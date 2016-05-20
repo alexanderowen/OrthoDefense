@@ -118,7 +118,7 @@ public class EnemyHealth : MonoBehaviour
 	}
 
 
-	void Death ()
+	public void Death ()
 	{
 		// The enemy is dead.
 		isDead = true;
