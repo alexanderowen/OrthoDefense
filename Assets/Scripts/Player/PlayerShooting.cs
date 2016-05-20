@@ -31,13 +31,16 @@ public class PlayerShooting : MonoBehaviour
     class GunClass {
 		public int damagePerShot;
 		public float timeBetweenBullets;
-    	public float range;
+		public float range;
 		public AudioSource gunShotClip;
-		public GunClass (int _damage, float _time, float _range, AudioSource _audio) {
+		public float accuracy;
+
+		public GunClass (int _damage, float _time, float _range, AudioSource _audio, float accuracy) {
 			damagePerShot = _damage;
 			timeBetweenBullets = _time;
     		range = _range;
 			gunShotClip = _audio;
+			this.accuracy = accuracy; 
     	}
     }
 
@@ -55,9 +58,11 @@ public class PlayerShooting : MonoBehaviour
         gunLight = GetComponent<Light> ();
 		//faceLight = GetComponentInChildren<Light> ();
 
-		gunList [0] = new GunClass (20, 0.15f, 32f, gunShotClips[0]); // Rifle
-		gunList [1] = new GunClass (50, 0.8f, 15f, gunShotClips[1]); // Shotgun
-		gunList [2] = new GunClass (200, 1.5f, 100f, gunShotClips[2]); // Laser
+		gunShotClips[2].volume = 0.8f;
+
+		gunList [0] = new GunClass (20, 0.15f, 32f, gunShotClips[0], 0.8f); // Rifle
+		gunList [1] = new GunClass (50, 0.8f, 15f, gunShotClips[1], 0.2f); // Shotgun
+		gunList [2] = new GunClass (200, 1.5f, 100f, gunShotClips[2], 1.1f); // Laser
 		gunType = Gun.Rifle;
     }
 
@@ -114,6 +119,8 @@ public class PlayerShooting : MonoBehaviour
 		currentDamage = gunList [(int)gunType].damagePerShot;
 		currentTime = gunList [(int)gunType].timeBetweenBullets;
 		currentRange = gunList [(int)gunType].range;
+	
+		gunLine.SetColors (Color.cyan, Color.green);
 		
 		// Reset the timer.
 		timer = 0f;
@@ -135,7 +142,9 @@ public class PlayerShooting : MonoBehaviour
 
 		// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 		shootRay.origin = transform.position;
-		shootRay.direction = transform.forward;
+		Vector3 temp = transform.forward;
+		temp.x = temp.x + Random.Range(0, gunList [(int)gunType].accuracy) * 0.1f - Random.Range(0, gunList [(int)gunType].accuracy) * 0.1f;
+		shootRay.direction = temp;//transform.forward;
 
         // Perform the raycast against gameobjects on the shootable layer and if it hits something...
         if(Physics.Raycast (shootRay, out shootHit, currentRange, shootableMask))
