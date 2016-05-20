@@ -5,18 +5,20 @@ using System.Collections.Generic;
 public class RedTurretShooter : MonoBehaviour {
 
 
-    private LineRenderer lr;
+    //private LineRenderer lr;
     private Queue<GameObject> enemyQueue;
 
     private float timer;
 
     void Start()
     {
-        lr = GetComponent<LineRenderer>();
+        //lr = GetComponent<LineRenderer>();
         enemyQueue = new Queue<GameObject>();
 
-        lr.SetVertexCount(2);
-        lr.enabled = false;
+        this.GetComponentInChildren<LightningBolt>().target = this.GetComponentInChildren<LightningBolt>().transform;
+
+        //lr.SetVertexCount(2);
+        //lr.enabled = false;
     }
 	
 	void Update () {
@@ -54,18 +56,20 @@ public class RedTurretShooter : MonoBehaviour {
 
     void ShootLightning()
     {
-        lr.enabled = true;
+        //lr.enabled = true;
         GameObject enemy = enemyQueue.Peek();
         if (enemy != null)
         {
             enemy.GetComponent<EnemyHealth>().isZapped = true;
 
-            lr.SetPosition(0, new Vector3(this.transform.position.x, this.transform.position.y + 5.8f, this.transform.position.z));
-            lr.SetPosition(1, enemy.transform.position);
+            //lr.SetPosition(0, new Vector3(this.transform.position.x, this.transform.position.y + 5.8f, this.transform.position.z));
+            //lr.SetPosition(1, enemy.transform.position);
+            this.GetComponentInChildren<LightningBolt>().target = enemy.transform;
         }
         else
         {
-            lr.enabled = false;
+            //lr.enabled = false;
+            this.GetComponentInChildren<LightningBolt>().target = this.GetComponentInChildren<LightningBolt>().transform;
         }
 
         
