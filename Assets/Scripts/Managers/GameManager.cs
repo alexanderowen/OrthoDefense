@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+	public void RestartLevel () {
+        // Reload the level that is currently loaded.
+		SceneManager.LoadScene (currentLevel);
+	}
+
 	public void LevelComplete() {
 		Animator anim = GameObject.Find ("HUDCanvas").GetComponent<Animator> ();
 		anim.SetTrigger ("LevelComplete");
@@ -36,16 +41,11 @@ public class GameManager : MonoBehaviour {
 
 		currentLevel++;
 
-		string sceneName = "Level 0" + currentLevel.ToString();
-		SceneManager.LoadScene (sceneName);
-
+		SceneManager.LoadScene (currentLevel);
 	}
 
 	void GameComplete() {
 		// TODO: YOU WIN text.
 		SceneManager.LoadScene ("Load Screen");
-	}
-
-	void Update () {	
 	}
 }

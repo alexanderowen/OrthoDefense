@@ -14,18 +14,19 @@ public class PlayerHealth : MonoBehaviour
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
 
-
-    Animator anim;                                              // Reference to the Animator component.
-    AudioSource playerAudio;                                    // Reference to the AudioSource component.
-    PlayerMovement playerMovement;                              // Reference to the player's movement.
-    PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
-    bool isDead;                                                // Whether the player is dead.
-    bool damaged;                                               // True when the player gets damaged.
+	private GameManager _GM;
+    private Animator anim;                                             
+    private AudioSource playerAudio;                                   
+    private PlayerMovement playerMovement;
+    private PlayerShooting playerShooting;
+    private bool isDead;
+    private bool damaged;
 
 
     void Awake ()
     {
         // Setting up the references.
+		_GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = GetComponent <Animator> ();
         playerAudio = GetComponent <AudioSource> ();
         playerMovement = GetComponent <PlayerMovement> ();
@@ -70,10 +71,7 @@ public class PlayerHealth : MonoBehaviour
         // Play the hurt sound effect.
         playerAudio.Play ();
 
-        // If the player has lost all it's health and the death flag hasn't been set yet...
-        if(currentHealth <= 0 && !isDead)
-        {
-            // ... it should die.
+        if(currentHealth <= 0 && !isDead) {
             Death ();
         }
     }
@@ -98,11 +96,8 @@ public class PlayerHealth : MonoBehaviour
         playerMovement.enabled = false;
         playerShooting.enabled = false;
     }
-
-
-    public void RestartLevel ()
-    {
-        // Reload the level that is currently loaded.
-        SceneManager.LoadScene (0);
+		
+    public void RestartLevel () {
+		_GM.RestartLevel ();
     }
 }
