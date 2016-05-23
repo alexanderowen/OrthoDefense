@@ -88,8 +88,21 @@ public class BuildManager : MonoBehaviour {
 	public void ResetStaticTurretLimits() {
 		// This method is to be called outside the class, for when the level needs to be restarted. 
 		// Resets the static variables. 
+
 		cannonlimit = currentCannonLimit;
 		magelimit = currentMageLimit;
+	}
+
+	public void AddLivingTurrets() {
+		// Find all remaining towers, add them to the count for next level. 
+		GameObject[] cannons = GameObject.FindGameObjectsWithTag("Turret");
+		foreach (GameObject cannon in cannons) {
+			if (cannon.name.StartsWith ("Tower")) {
+				magelimit++;
+			} else {
+				cannonlimit++;
+			}
+		}
 	}
 
 	public void spawnTower() {
@@ -109,10 +122,6 @@ public class BuildManager : MonoBehaviour {
 		backgroundmusic.enabled = true;
 		phaseManager.BeginAttackPhase ();
 		miniMap.enabled = true;
-	}
-
-	public void helpMesh() {
-		//TODO placeable mesh pattern towers can be placed
 	}
 
 	public void Quit()

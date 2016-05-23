@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour {
 			GameComplete ();
 			return;
 		}
+		BuildManager BM = GameObject.Find("BuildCanvas").GetComponent<BuildManager> ();
+		BM.AddLivingTurrets ();
 
 		currentLevel++;
 
