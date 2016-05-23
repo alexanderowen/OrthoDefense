@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour {
 	public int currentLevel = 1;
 	public int finalLevel = 5;
 
-
 	void Awake () {
 		if (instance == null) {
 			instance = this;
@@ -17,16 +16,19 @@ public class GameManager : MonoBehaviour {
 		}
 
 		DontDestroyOnLoad(gameObject); // When reloading the scene, don't destroy this.
-
 	}
 
 	public void RestartLevel () {
+		// Tell the BM to set the turret values to what they were at the beginning of the level.
+		BuildManager BM = GameObject.Find("BuildCanvas").GetComponent<BuildManager> ();
+		BM.ResetStaticTurretLimits ();
+
         // Reload the level that is currently loaded.
 		SceneManager.LoadScene (currentLevel);
 	}
 
 	public void LevelComplete() {
-		Animator anim = GameObject.Find ("HUDCanvas").GetComponent<Animator> ();
+		Animator anim = GameObject.Find("HUDCanvas").GetComponent<Animator> ();
 		anim.SetTrigger ("LevelComplete");
 
 		// Play Animator

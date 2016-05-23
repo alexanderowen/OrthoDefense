@@ -36,6 +36,7 @@ public class PhaseManager : MonoBehaviour {
 	}
 
 	public void BeginAttackPhase() {
+		IsBuildPhase = false;
 		GameObject nobuildzone = GameObject.Find ("NoBuildZone");
 		nobuildzone.SetActive (false);
 		enemyManager.SetActive (true);
@@ -48,7 +49,8 @@ public class PhaseManager : MonoBehaviour {
 		healthUI.SetActive (true);
 		homeHealthUI.SetActive (true);
 		scoreText.SetActive (true);
-		buildCanvas.SetActive (false);
+		GameObject.Find ("BuildPanel").SetActive (false);
+		//buildCanvas.SetActive (false);
 
 
 		// Do the animation thing again

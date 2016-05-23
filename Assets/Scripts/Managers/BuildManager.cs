@@ -8,6 +8,9 @@ public class BuildManager : MonoBehaviour {
 
 	public static int cannonlimit = 2;
 	public static int magelimit = 2;
+	public int currentCannonLimit;
+	public int currentMageLimit;
+
 	public GameObject towerprefab;
 	public GameObject mageprefab;
 	public Camera miniMap;
@@ -15,28 +18,33 @@ public class BuildManager : MonoBehaviour {
 	private PhaseManager phaseManager;
 	private AudioSource backgroundmusic;
 	private AudioSource towerBuildAudio;
+	private Canvas canvas;
 	private Button cannonbutton;
 	private Button magebutton;
 	private bool buildPhase;
 	private bool magetower;
 	private bool cannontower;
 
-	Canvas canvas;
 
-	void Start()
-	{
-		backgroundmusic = GameObject.Find ("BackgroundMusic").GetComponent<AudioSource> ();
+
+	void Start() {
 		towerBuildAudio = GetComponent<AudioSource> ();
-		phaseManager = GameObject.Find("HUDCanvas").GetComponent<PhaseManager> ();
-		cannonbutton = GameObject.Find ("CannonButton").GetComponent<Button> ();
-		magebutton = GameObject.Find ("MageButton").GetComponent<Button> ();
+		canvas 			= GetComponent<Canvas>();
+		backgroundmusic = GameObject.Find ("BackgroundMusic").GetComponent<AudioSource> ();
+		phaseManager 	= GameObject.Find ("HUDCanvas").GetComponent<PhaseManager> ();
+		cannonbutton	= GameObject.Find ("CannonButton").GetComponent<Button> ();
+		magebutton 		= GameObject.Find ("MageButton").GetComponent<Button> ();
+
 		cannonbutton.GetComponentInChildren<Text> ().text = cannonlimit.ToString ();
 		magebutton.GetComponentInChildren<Text> ().text = magelimit.ToString ();
-		canvas = GetComponent<Canvas>();
-		magetower = false;
-		cannontower = false;
-		buildPhase = true;
+
+		magetower 		= false;
+		cannontower 	= false;
+		buildPhase 		= true;
 		miniMap.enabled = false;
+
+		currentCannonLimit = cannonlimit;
+		currentMageLimit = magelimit;
 	}
 
 	void Update ()
@@ -47,7 +55,7 @@ public class BuildManager : MonoBehaviour {
 			Vector3 mousePos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0f);
 
 			if (Input.GetMouseButtonDown (0)) {
-				if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() == false) {
+				if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject () == false) {
 					Vector3 wordPos;
 					Ray ray = Camera.main.ScreenPointToRay (mousePos);
 					RaycastHit hit;
@@ -60,7 +68,7 @@ public class BuildManager : MonoBehaviour {
 								cannonbutton.GetComponentInChildren<Text> ().text = cannonlimit.ToString ();
 								towerBuildAudio.Play ();
 							} else if (magetower && magelimit > 0) {
-								Instantiate (mageprefab, wordPos, Quaternion.Euler(0, 60, 0)); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
+								Instantiate (mageprefab, wordPos, Quaternion.Euler (0, 60, 0)); //or for tandom rotarion use Quaternion.LookRotation(Random.insideUnitSphere)
 								magelimit--;
 								magebutton.GetComponentInChildren<Text> ().text = magelimit.ToString ();
 								towerBuildAudio.Play ();
@@ -71,11 +79,18 @@ public class BuildManager : MonoBehaviour {
 					}
 				}								
 			}
-		}
+		} 
+
 		if (miniMap.enabled)
 			miniMap.enabled = false;
 	}
 
+	public void ResetStaticTurretLimits() {
+		// This method is to be called outside the class, for when the level needs to be restarted. 
+		// Resets the static variables. 
+		cannonlimit = currentCannonLimit;
+		magelimit = currentMageLimit;
+	}
 
 	public void spawnTower() {
 		if (magetower)
@@ -92,7 +107,6 @@ public class BuildManager : MonoBehaviour {
 	public void gameStart()
 	{
 		backgroundmusic.enabled = true;
-		phaseManager.IsBuildPhase = false;
 		phaseManager.BeginAttackPhase ();
 		miniMap.enabled = true;
 	}
@@ -100,7 +114,6 @@ public class BuildManager : MonoBehaviour {
 	public void helpMesh() {
 		//TODO placeable mesh pattern towers can be placed
 	}
-
 
 	public void Quit()
 	{

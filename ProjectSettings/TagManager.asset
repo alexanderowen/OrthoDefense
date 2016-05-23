@@ -12,6 +12,7 @@ TagManager:
   - Buildable
   - Pickup
   - MiniMap
+  - BuildCanvas
   layers:
   - Default
   - TransparentFX
