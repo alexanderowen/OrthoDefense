@@ -17,7 +17,7 @@ public class WaveManager: MonoBehaviour {
 	}
 		
 	void Update () {
-		if (!isSpawning && GameObject.FindWithTag ("Enemy") == null) {
+		if (!isSpawning && GameObject.FindWithTag ("Enemy") == null && GameObject.FindWithTag("InvisEnemy") == null) {
 			GM.LevelComplete ();
 			Destroy (gameObject);
 		}
