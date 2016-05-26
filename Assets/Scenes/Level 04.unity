@@ -4598,7 +4598,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: -20
-  far clip plane: 50
+  far clip plane: 100
   field of view: 7.6
   orthographic: 1
   orthographic size: 8.384518
@@ -7581,7 +7581,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1001 &1688029589
 Prefab:
   m_ObjectHideFlags: 0
