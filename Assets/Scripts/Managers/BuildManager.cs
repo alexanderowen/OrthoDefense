@@ -51,6 +51,8 @@ public class BuildManager : MonoBehaviour {
 	{
 		if (phaseManager.IsBuildPhase && buildPhase) {
 			canvas.enabled = true;
+			if (miniMap.enabled)
+				miniMap.enabled = false;
 
 			Vector3 mousePos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0f);
 
@@ -80,9 +82,6 @@ public class BuildManager : MonoBehaviour {
 				}								
 			}
 		} 
-
-		if (miniMap.enabled)
-			miniMap.enabled = false;
 	}
 
 	public void ResetStaticTurretLimits() {
