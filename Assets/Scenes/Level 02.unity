@@ -389,6 +389,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a85f41bd91dcb4884810a1092df59f79, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &102360500 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 464700, guid: a85f41bd91dcb4884810a1092df59f79, type: 2}
+  m_PrefabInternal: {fileID: 102360499}
 --- !u!1 &122325358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1641,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 146777274416a4f018b7668f22093fdf, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &456312373 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 470658, guid: 146777274416a4f018b7668f22093fdf, type: 2}
+  m_PrefabInternal: {fileID: 456312372}
 --- !u!1 &482173691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,8 +3059,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5053c833de684a248b7d27537c74d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: 60
+  spawnCount: 80
   isSpawning: 0
+--- !u!114 &938506314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938506312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1463442441}
+  enemy: {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
+  spawnTime: 10
+  spawnPoints:
+  - {fileID: 102360500}
+--- !u!114 &938506315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938506312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1463442441}
+  enemy: {fileID: 151580, guid: cee7ba499cd3e4bfc9c46b98e33571e0, type: 2}
+  spawnTime: 4
+  spawnPoints:
+  - {fileID: 456312373}
+--- !u!114 &938506316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938506312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1463442441}
+  enemy: {fileID: 151580, guid: cee7ba499cd3e4bfc9c46b98e33571e0, type: 2}
+  spawnTime: 4
+  spawnPoints:
+  - {fileID: 1352150986}
+--- !u!114 &938506317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938506312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1463442441}
+  enemy: {fileID: 100002, guid: e5171f72421770240bd7c3989fe351e3, type: 2}
+  spawnTime: 3
+  spawnPoints:
+  - {fileID: 1409210013}
+--- !u!114 &938506318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938506312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1463442441}
+  enemy: {fileID: 100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 2}
+  spawnTime: 3
+  spawnPoints:
+  - {fileID: 1338361588}
+--- !u!114 &938506319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938506312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1463442441}
+  enemy: {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
+  spawnTime: 10
+  spawnPoints:
+  - {fileID: 1902352305}
 --- !u!114 &938506321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3066,7 +3170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
-  spawnTime: 3
+  spawnTime: 14
   spawnPoints:
   - {fileID: 295943048}
 --- !u!1 &939848551
@@ -4893,6 +4997,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 146777274416a4f018b7668f22093fdf, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1352150986 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 470658, guid: 146777274416a4f018b7668f22093fdf, type: 2}
+  m_PrefabInternal: {fileID: 1352150985}
 --- !u!1 &1372433231
 GameObject:
   m_ObjectHideFlags: 0

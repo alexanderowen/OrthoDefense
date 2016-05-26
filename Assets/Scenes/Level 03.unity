@@ -514,11 +514,15 @@ Prefab:
       objectReference: {fileID: 606529733}
     - target: {fileID: 11494236, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11418106, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
+      propertyPath: spawnTime
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11458610, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
@@ -5257,7 +5261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1846297588}
   enemy: {fileID: 151580, guid: cee7ba499cd3e4bfc9c46b98e33571e0, type: 2}
-  spawnTime: 5
+  spawnTime: 4
   spawnPoints:
   - {fileID: 809778644}
 --- !u!114 &1963886890
@@ -5273,7 +5277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1846297588}
   enemy: {fileID: 121154, guid: 0b78ca80657cf42738e8c3074351c38d, type: 2}
-  spawnTime: 5
+  spawnTime: 30
   spawnPoints:
   - {fileID: 533765257}
 --- !u!114 &1963886891
@@ -5289,7 +5293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1846297588}
   enemy: {fileID: 151580, guid: cee7ba499cd3e4bfc9c46b98e33571e0, type: 2}
-  spawnTime: 5
+  spawnTime: 4
   spawnPoints:
   - {fileID: 616852817}
 --- !u!114 &1963886892
@@ -5305,7 +5309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1846297588}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
-  spawnTime: 4
+  spawnTime: 14
   spawnPoints:
   - {fileID: 1199208834}
 --- !u!114 &1963886896
@@ -5319,7 +5323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5053c833de684a248b7d27537c74d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: 70
+  spawnCount: 90
   isSpawning: 0
 --- !u!1 &1967257412
 GameObject:
