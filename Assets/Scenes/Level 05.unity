@@ -2127,7 +2127,7 @@ Transform:
   - {fileID: 2112388789}
   - {fileID: 1543742114}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &857418552
 GameObject:
   m_ObjectHideFlags: 0
@@ -5931,7 +5931,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: -20
-  far clip plane: 50
+  far clip plane: 100
   field of view: 7.6
   orthographic: 1
   orthographic size: 8.9
