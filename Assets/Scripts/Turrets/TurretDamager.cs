@@ -5,7 +5,9 @@ public class TurretDamager : MonoBehaviour {
 
     public int damagePerHit;
     public float forceTime;
+    public GameObject puff;
 
+    private bool isExploding;
     private EnemyHealth enemyHealth;
     private new Renderer renderer;
     private Rigidbody rb;
@@ -30,12 +32,16 @@ public class TurretDamager : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("Enemy")) 
         {
-            createExplosion(transform);
+            if (!isExploding)
+            {
+                createExplosion(transform);
+            }
         }
     }
 
     void createExplosion(Transform atPos)
     {
+        isExploding = true;
         renderer = GetComponent<Renderer>();
         renderer.enabled = false;
         rb.velocity = new Vector3(0,0,0);
@@ -46,7 +52,9 @@ public class TurretDamager : MonoBehaviour {
 
     IEnumerator explosionDestroy()
     {
-        yield return new WaitForSeconds(1f);
+        Object boom = Instantiate(puff, this.gameObject.transform.position, this.gameObject.transform.rotation);
+        yield return new WaitForSeconds(.5f);
+        Destroy(boom);
         Destroy(this.gameObject);
     }
 }
