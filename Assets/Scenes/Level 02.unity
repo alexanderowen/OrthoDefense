@@ -3074,7 +3074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
-  spawnTime: 10
+  spawnTime: 28
   spawnPoints:
   - {fileID: 102360500}
 --- !u!114 &938506315
@@ -3106,7 +3106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 151580, guid: cee7ba499cd3e4bfc9c46b98e33571e0, type: 2}
-  spawnTime: 4
+  spawnTime: 1
   spawnPoints:
   - {fileID: 1352150986}
 --- !u!114 &938506317
@@ -3122,7 +3122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 100002, guid: e5171f72421770240bd7c3989fe351e3, type: 2}
-  spawnTime: 3
+  spawnTime: 1
   spawnPoints:
   - {fileID: 1409210013}
 --- !u!114 &938506318
@@ -3138,7 +3138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 2}
-  spawnTime: 3
+  spawnTime: 2
   spawnPoints:
   - {fileID: 1338361588}
 --- !u!114 &938506319
@@ -3154,9 +3154,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
-  spawnTime: 10
+  spawnTime: 28
   spawnPoints:
   - {fileID: 1902352305}
+--- !u!114 &938506320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938506312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1463442441}
+  enemy: {fileID: 149842, guid: e077d0a70e72d476cb5592eb059c0287, type: 2}
+  spawnTime: 10
+  spawnPoints:
+  - {fileID: 295943048}
 --- !u!114 &938506321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3170,7 +3186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
-  spawnTime: 6
+  spawnTime: 20
   spawnPoints:
   - {fileID: 295943048}
 --- !u!1 &939848551

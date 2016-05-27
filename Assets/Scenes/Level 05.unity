@@ -4487,7 +4487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 12
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 11418106, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
@@ -4775,7 +4775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 908157173}
   enemy: {fileID: 121154, guid: 0b78ca80657cf42738e8c3074351c38d, type: 2}
-  spawnTime: 30
+  spawnTime: 20
   spawnPoints:
   - {fileID: 1138087862}
 --- !u!114 &1645944211
@@ -4808,6 +4808,22 @@ MonoBehaviour:
   playerHealth: {fileID: 908157173}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
   spawnTime: 25
+  spawnPoints:
+  - {fileID: 799797038}
+--- !u!114 &1645944213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1645944209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 908157173}
+  enemy: {fileID: 149842, guid: e077d0a70e72d476cb5592eb059c0287, type: 2}
+  spawnTime: 9
   spawnPoints:
   - {fileID: 799797038}
 --- !u!1001 &1658309557

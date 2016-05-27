@@ -3173,7 +3173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1228306058}
   enemy: {fileID: 100002, guid: e5171f72421770240bd7c3989fe351e3, type: 2}
-  spawnTime: 3
+  spawnTime: 1
   spawnPoints:
   - {fileID: 1049613594}
 --- !u!114 &648426212
@@ -3205,7 +3205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1228306058}
   enemy: {fileID: 151580, guid: cee7ba499cd3e4bfc9c46b98e33571e0, type: 2}
-  spawnTime: 3
+  spawnTime: 1
   spawnPoints:
   - {fileID: 163905166}
 --- !u!114 &648426214
@@ -3222,6 +3222,22 @@ MonoBehaviour:
   playerHealth: {fileID: 1228306058}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
   spawnTime: 20
+  spawnPoints:
+  - {fileID: 381209615}
+--- !u!114 &648426215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648426209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1228306058}
+  enemy: {fileID: 149842, guid: e077d0a70e72d476cb5592eb059c0287, type: 2}
+  spawnTime: 10
   spawnPoints:
   - {fileID: 381209615}
 --- !u!1 &650470266
@@ -5827,7 +5843,7 @@ Prefab:
       objectReference: {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
     - target: {fileID: 11418106, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 18
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 11494236, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: enemy
@@ -5839,7 +5855,7 @@ Prefab:
       objectReference: {fileID: 464718683}
     - target: {fileID: 11494236, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnPoints.Array.data[0]
