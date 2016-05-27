@@ -13,6 +13,11 @@ public class PlayerShooting : MonoBehaviour
     float timer;                                    // A timer to determine when to fire.
 
     Ray shootRay;                                   // A ray from the gun end forwards.
+	Ray shootLeft;
+	Ray shootRight;
+	public LineRenderer leftline;
+	public LineRenderer rightline;
+	public ParticleSystem gunparticle;
 
     RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
     int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
@@ -22,10 +27,6 @@ public class PlayerShooting : MonoBehaviour
     Light gunLight;                                 // Reference to the light component.
 	public Light faceLight;								// Duh
     float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
-
-    public Material assaultColor;
-    public Material shotgunColor;
-    public Material laserRifleColor;
 
     private enum Gun { Rifle, Shotgun, Laser };
 
@@ -82,7 +83,7 @@ public class PlayerShooting : MonoBehaviour
 		if((Input.GetButton ("Fire1") || Input.GetKey("space")) && timer >= currentTime && Time.timeScale != 0)
         {
             // ... shoot the gun.
-            Shoot();
+            Shoot(gunType);
         }
 #else
         // If there is input on the shoot direction stick and it's time to fire...
@@ -101,15 +102,12 @@ public class PlayerShooting : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.Alpha1)) {
 			gunType = Gun.Rifle;
-            gunLine.material = assaultColor;
 		}
 		else if (Input.GetKeyDown (KeyCode.Alpha2)) {
 			gunType = Gun.Shotgun;
-            gunLine.material = shotgunColor;
         } 
 		else if (Input.GetKeyDown (KeyCode.Alpha3)) {
 			gunType = Gun.Laser;
-            gunLine.material = laserRifleColor;
 		}
     }
 
@@ -118,18 +116,48 @@ public class PlayerShooting : MonoBehaviour
     {
         // Disable the line renderer and the light.
         gunLine.enabled = false;
+		leftline.enabled = false;
+		rightline.enabled = false;
 		faceLight.enabled = false;
         gunLight.enabled = false;
     }
 
+	void ifHit(Ray shot, float currentRange, int currentDamage, LineRenderer outline) {
+		// Perform the raycast against gameobjects on the shootable layer and if it hits something...
+		if (Physics.Raycast (shot, out shootHit, currentRange, shootableMask)) {
+			// Try and find an EnemyHealth script on the gameobject hit.
+			EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth> ();
 
-    void Shoot()
+			// If the EnemyHealth component exist...
+			if (enemyHealth != null) {
+				// ... the enemy should take damage.
+				enemyHealth.TakeDamage (currentDamage, shootHit.point);
+			}
+
+			// Set the second position of the line renderer to the point the raycast hit.
+			outline.SetPosition (1, shootHit.point);
+		}
+		// If the raycast didn't hit anything on the shootable layer...
+		else {
+			// ... set the second position of the line renderer to the fullest extent of the gun's range.
+			outline.SetPosition (1, shot.origin + shot.direction * currentRange);
+		}
+	}
+
+
+	void Shoot(Gun gunType)
     {
         currentDamage = gunList[(int)gunType].damagePerShot;
         currentTime = gunList[(int)gunType].timeBetweenBullets;
         currentRange = gunList[(int)gunType].range;
-
-        gunLine.SetColors(Color.cyan, Color.green);
+		/*
+		if (gunType == Gun.Rifle)
+			gunLine.SetColors(Color.yellow);
+		if (gunType == Gun.Shotgun)
+        	gunLine.SetColors(Color.green);
+		if (gunType == Gun.Laser)
+			gunLine.SetColors (Color.red);
+			*/
 
         // Reset the timer.
         timer = 0f;
@@ -152,33 +180,65 @@ public class PlayerShooting : MonoBehaviour
         // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 
         shootRay.origin = transform.position;
+		shootLeft.origin = transform.position; //for shotgun
+		shootRight.origin = transform.position; //for shotgun
 
-        //Vector3 temp = transform.forward;
-        //temp.x = temp.x + Random.Range(0, gunList [(int)gunType].accuracy) * 0.1f - Random.Range(0, gunList [(int)gunType].accuracy) * 0.1f;
+		if (gunType == Gun.Rifle) {
+			faceLight.color = Color.yellow;
+			gunLine.material.color = Color.yellow;
+			gunLine.SetColors (Color.yellow, Color.yellow);
+			gunparticle.startColor = Color.yellow;
+			gunLight.color = Color.yellow;
+			gunLine.SetWidth (0.05f, 0.05f);
+			shootRay.direction = transform.forward;
+			ifHit (shootRay, currentRange, currentDamage, gunLine);
+		}
 
-        shootRay.direction = transform.forward;
 
-        // Perform the raycast against gameobjects on the shootable layer and if it hits something...
-        if (Physics.Raycast(shootRay, out shootHit, currentRange, shootableMask))
-        {
-            // Try and find an EnemyHealth script on the gameobject hit.
-            EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
+		if (gunType == Gun.Shotgun) {
+			faceLight.color = Color.red;
+			gunLine.material.color = Color.red;
+			leftline.material.color = Color.red;
+			rightline.material.color = Color.red;
+			gunparticle.startColor = Color.red;
+			gunLine.SetColors (Color.red, Color.red);
+			gunLine.SetWidth (0.05f, 0.05f);
+			gunLight.color = Color.red;
+			leftline.enabled = true;
+			leftline.SetPosition (0, transform.position);
+			rightline.enabled = true;
+			rightline.SetPosition (0, transform.position);
 
-            // If the EnemyHealth component exist...
-            if (enemyHealth != null)
-            {
-                // ... the enemy should take damage.
-                enemyHealth.TakeDamage(currentDamage, shootHit.point);
-            }
+			shootLeft = new Ray(transform.position, Quaternion.Euler (0, -10, 0) * transform.forward);
+			shootRight = new Ray(transform.position, Quaternion.Euler (0, 10, 0) * transform.forward);
+			shootRay.direction = transform.forward;
 
-            // Set the second position of the line renderer to the point the raycast hit.
-            gunLine.SetPosition(1, shootHit.point);
-        }
-        // If the raycast didn't hit anything on the shootable layer...
-        else
-        {
-            // ... set the second position of the line renderer to the fullest extent of the gun's range.
-            gunLine.SetPosition(1, shootRay.origin + shootRay.direction * currentRange);
-        }
+			ifHit (shootRay, currentRange, currentDamage, gunLine);
+			ifHit (shootLeft, currentRange, currentDamage, leftline);
+			ifHit (shootRight, currentRange, currentDamage, rightline);
+
+		}
+		if (gunType == Gun.Laser) {
+			faceLight.color = Color.blue;
+			gunLine.material.color = Color.blue;
+			gunLine.SetColors (Color.blue, Color.blue);
+			gunparticle.startColor = Color.blue;
+			gunLight.color = Color.blue;
+			gunLine.SetWidth (0.05f, 1f);
+			shootRay.direction = transform.forward;
+
+			RaycastHit[] rayhits;
+			rayhits = Physics.SphereCastAll (shootRay, 0.7f);
+			for (int i = 0; i < rayhits.Length; i++) {
+				EnemyHealth enemyHealth = rayhits[i].collider.GetComponent<EnemyHealth> ();
+
+				// If the EnemyHealth component exist...
+				if (enemyHealth != null) {
+					// ... the enemy should take damage.
+					enemyHealth.TakeDamage (currentDamage, shootHit.point);
+				}
+			}
+			gunLine.SetPosition (1, shootRay.origin + shootRay.direction * currentRange);
+		}
     }
 }
