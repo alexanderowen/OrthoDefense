@@ -514,7 +514,7 @@ Prefab:
       objectReference: {fileID: 606529733}
     - target: {fileID: 11494236, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11418106, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
@@ -522,7 +522,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 25
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11458610, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
@@ -5277,7 +5277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1846297588}
   enemy: {fileID: 121154, guid: 0b78ca80657cf42738e8c3074351c38d, type: 2}
-  spawnTime: 30
+  spawnTime: 10
   spawnPoints:
   - {fileID: 533765257}
 --- !u!114 &1963886891
@@ -5293,7 +5293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1846297588}
   enemy: {fileID: 151580, guid: cee7ba499cd3e4bfc9c46b98e33571e0, type: 2}
-  spawnTime: 31
+  spawnTime: 1
   spawnPoints:
   - {fileID: 616852817}
 --- !u!114 &1963886892
@@ -5309,7 +5309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1846297588}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
-  spawnTime: 14
+  spawnTime: 7
   spawnPoints:
   - {fileID: 1199208834}
 --- !u!114 &1963886893
