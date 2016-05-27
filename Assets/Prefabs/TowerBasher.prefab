@@ -33,8 +33,7 @@ GameObject:
   - 82: {fileID: 8233020}
   - 114: {fileID: 11472672}
   - 114: {fileID: 11489934}
-  - 114: {fileID: 11424820}
-  - 114: {fileID: 11434802}
+  - 114: {fileID: 11442662}
   m_Layer: 9
   m_Name: TowerBasher
   m_TagString: InvisEnemy
@@ -160,7 +159,7 @@ AudioSource:
   Spatialize: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.28990436
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -233,7 +232,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11424820
+--- !u!114 &11442662
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -241,22 +240,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 111708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7f724f7e7964f678e2923561810ca8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9256f09c1ffbf4cddb50fcde8fbde4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
-  attackDamage: 8
---- !u!114 &11434802
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27696c87e4caf402fa423c90a5b0bf9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  attackDamage: 7
 --- !u!114 &11472672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,7 +346,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 111708}
   m_Enabled: 1
   m_Radius: 0.3
-  m_Speed: 7
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

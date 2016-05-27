@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-
-public class TowerBasherAttack : MonoBehaviour
+public class TowerBasherAttackAndMovement : MonoBehaviour
 {
 	public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
 	public int attackDamage = 10;               // The amount of health taken away per attack.
@@ -15,55 +13,66 @@ public class TowerBasherAttack : MonoBehaviour
 	GameObject player;                          // Reference to the player GameObject.
 	PlayerHealth playerHealth;                  // Reference to the player's health.
 	GameObject[] turrets;
-	TowerBasherMovement movement;
+	NavMeshAgent nav;               // Reference to the nav mesh agent.
 
 	bool InRange;                         // Whether player is within the trigger collider and can be attacked.
 	float timer;                                // Timer for counting up to the next attack.
-	bool anyTowersLeft;
+	bool playerLockOn;				// Is the enemy locked onto the player?
 
 
 	void Awake ()
 	{
 		// Setting up the references.
-		movement = GetComponent<TowerBasherMovement>();
-		anyTowersLeft = false;
+		/*<--------Attack------------>*/
+		playerLockOn = true;
 		if (GameObject.FindWithTag ("Turret") != null) {
 			turrets = GameObject.FindGameObjectsWithTag ("Turret");
 			turret = turrets [0];
 			turretHealth = turret.GetComponent <TurretHealth> ();
-			anyTowersLeft = true;
+			playerLockOn = false;
 		}
 		player = GameObject.FindGameObjectWithTag ("Player");
 		playerHealth = player.GetComponent <PlayerHealth> ();
 		enemyHealth = GetComponent<EnemyHealth>();
 		anim = GetComponent <Animator> ();
+
+		/*<------- Movement ------------>*/
+		// Set up the references.
+		nav = GetComponent <NavMeshAgent> ();
 	}
 
 
 	void OnTriggerEnter (Collider other)
 	{
-		// If the entering collider is the base...
-		if(other.gameObject == turret || other.gameObject == player)
-		{
-			// ... the base is in range.
-			InRange = true;
+		if (!playerLockOn) {
+			if (other.gameObject == turret) {
+				InRange = true;
+			}
+		} else if (playerLockOn) {
+			if (other.gameObject == player) {
+				InRange = true;
+			}
 		}
 	}
 
 
 	void OnTriggerExit (Collider other)
 	{
-		// If the exiting collider is the base...
-		if(other.gameObject == turret || other.gameObject == player)
-		{
-			// ... the base is no longer in range.
-			InRange = false;
+		if (!playerLockOn) {
+			if (other.gameObject == turret) {
+				InRange = false;
+			}
+		} else if (playerLockOn) {
+			if (other.gameObject == player) {
+				InRange = false;
+			}
 		}
 	}
 
 
 	void Update ()
 	{
+		/*<-----------Attack---------->*/
 		// Add the time since Update was last called to the timer.
 		timer += Time.deltaTime;
 
@@ -74,7 +83,7 @@ public class TowerBasherAttack : MonoBehaviour
 			Attack ();
 		}
 
-		if (anyTowersLeft) {
+		if (!playerLockOn) {
 			if (turretHealth.currenthealth < 0) {
 				enemyHealth.Death ();
 			}
@@ -83,6 +92,24 @@ public class TowerBasherAttack : MonoBehaviour
 			// ... tell the animator the player is dead.
 			anim.SetTrigger ("PlayerDead");
 		}
+
+		/*<----------Movement------------>*/
+
+		if (!playerLockOn && enemyHealth.currentHealth > 0 && turretHealth.currenthealth > 0) {
+			// If the enemy and the player have health left...
+				// ... set the destination of the nav mesh agent to the base.
+			nav.SetDestination (turret.transform.position);
+
+		} else if (playerLockOn && enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0) {
+			nav.SetDestination (player.transform.position);
+		}
+		// Otherwise...
+		else
+		{
+			// ... disable the nav mesh agent.
+			nav.enabled = false;
+		}
+
 	}
 
 
@@ -91,17 +118,17 @@ public class TowerBasherAttack : MonoBehaviour
 		// Reset the timer.
 		timer = 0f;
 
-		if (anyTowersLeft) {
+		if (!playerLockOn && turretHealth.currenthealth > 0) {
 			// If the turret has health to lose...
-			if (turretHealth.currenthealth > 0) {
 				// ... damage the turret.
 				turretHealth.DamageTower (attackDamage);
-			}
 		}
-		else if(playerHealth.currentHealth > 0 && movement.isPlayerLockedOn())
+		if(playerHealth.currentHealth > 0 && playerLockOn)
 		{
 			// ... damage the player.
 			playerHealth.TakeDamage(attackDamage);
 		}
 	}
 }
+
+
