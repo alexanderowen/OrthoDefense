@@ -88,6 +88,7 @@ Shader "Explosion" {
 			
 			v2f vert (appdata_base v) {
 				v2f o;
+				UNITY_INITIALIZE_OUTPUT(v2f, o);
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 				o.worldPos = mul(_Object2World, v.vertex).xyz;
 				o.viewVec = WorldSpaceViewDir(v.vertex);

@@ -225,11 +225,11 @@ half4 frag( v2f i ) : SV_Target
         sum += tex2D (_SSAO, nuv.xy).r * coef;
         denom += coef;
     }
-    for (int s = 0; s < NUM_BLUR_SAMPLES; ++s)
+    for (int k = 0; k < NUM_BLUR_SAMPLES; ++k)
     {
-        float2 nuv = i.uv - o * (s+1);
+        float2 nuv = i.uv - o * (k+1);
         half4 ngeom = tex2D (_CameraDepthNormalsTexture, nuv.xy);
-        half coef = (NUM_BLUR_SAMPLES - s) * CheckSame (geom, ngeom);
+        half coef = (NUM_BLUR_SAMPLES - k) * CheckSame (geom, ngeom);
         sum += tex2D (_SSAO, nuv.xy).r * coef;
         denom += coef;
     }
