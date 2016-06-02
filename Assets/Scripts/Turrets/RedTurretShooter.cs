@@ -69,7 +69,7 @@ public class RedTurretShooter : MonoBehaviour {
         else
         {
             //lr.enabled = false;
-            this.GetComponentInChildren<LightningBolt>().target = this.GetComponentInChildren<LightningBolt>().transform;
+            this.GetComponentInChildren<LightningBolt>().target = this.transform;
         }
 
         

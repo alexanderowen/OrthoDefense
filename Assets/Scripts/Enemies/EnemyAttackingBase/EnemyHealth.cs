@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
 		}
 		if (isZapped)
 		{
-			TakeLightningDamage(5, 1, transform.position);
+			TakeLightningDamage(3, 1, transform.position);
 		}
 	}
 
