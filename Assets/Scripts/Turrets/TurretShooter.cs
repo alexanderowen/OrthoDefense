@@ -27,15 +27,16 @@ public class TurretShooter : MonoBehaviour {
     {
 		if(enemyInRange)
         {
-			if (enemyTransform != null) {
-				direction = enemyTransform.position - transform.position;
-				Vector3 lookDirection = new Vector3 (direction.x, transform.position.y, direction.z);
-				transform.LookAt (lookDirection);
-			}
-
-            if (Time.time > timer + fireRate)
+            if (enemyTransform != null)
             {
-                Shoot();
+                direction = enemyTransform.position - transform.position;
+                Vector3 lookDirection = new Vector3(direction.x, transform.position.y, direction.z);
+                transform.LookAt(lookDirection);
+
+                if (Time.time > timer + fireRate)
+                {
+                    Shoot();
+                }
             }
         }
     }
