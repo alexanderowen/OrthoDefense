@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.21799307, g: 0.23009183, b: 0.35294116, a: 1}
   m_AmbientEquatorColor: {r: 0.21799307, g: 0.23009183, b: 0.35294116, a: 1}
   m_AmbientGroundColor: {r: 0.21799307, g: 0.23009183, b: 0.35294116, a: 1}
-  m_AmbientIntensity: 0.9546878
+  m_AmbientIntensity: 1.5
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 2100000, guid: a8e97dde7d205ba47bdf7c4730b97d31, type: 2}
   m_HaloStrength: 0.5
@@ -3013,7 +3013,7 @@ Prefab:
       objectReference: {fileID: 1851598978}
     - target: {fileID: 22414730, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 22414730, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.y
@@ -3021,11 +3021,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22446168, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 22446168, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 22446168, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.y
@@ -3051,8 +3051,24 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 127092, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 22473440, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22473440, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22465926, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22465926, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22465926, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

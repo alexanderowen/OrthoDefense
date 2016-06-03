@@ -10,11 +10,16 @@ public class PauseManager : MonoBehaviour {
 	
 	public AudioMixerSnapshot paused;
 	public AudioMixerSnapshot unpaused;
+	public static float brightnessLevel = -1;
 	
 	Canvas canvas;
 	
-	void Start()
+	void Start ()
 	{
+		if (brightnessLevel == -1) {
+			brightnessLevel = 1.5f;
+		}
+		RenderSettings.ambientIntensity = brightnessLevel;
 		canvas = GetComponent<Canvas>();
 	}
 	
@@ -55,5 +60,11 @@ public class PauseManager : MonoBehaviour {
 		#else 
 		Application.Quit();
 		#endif
+	}
+
+	public void SetBrightness(float inputLevel)
+	{
+		brightnessLevel = inputLevel;
+		RenderSettings.ambientIntensity = brightnessLevel;
 	}
 }
