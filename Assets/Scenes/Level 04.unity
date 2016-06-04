@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 1.5
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -4603,7 +4603,7 @@ Camera:
   far clip plane: 120
   field of view: 7.6
   orthographic: 1
-  orthographic size: 8.384518
+  orthographic size: 13
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -4881,7 +4881,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22414730, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 22414730, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.y
@@ -4889,13 +4889,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22446168, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 22446168, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 22446168, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22473440, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22473440, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22465926, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22465926, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22465926, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
