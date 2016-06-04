@@ -10,7 +10,8 @@ public class PlayerShooting : MonoBehaviour
     //public float range = 100f;                      // The distance the gun can fire.
 
 
-    float timer;                                    // A timer to determine when to fire.
+    float timer = 0f;                               // A timer to determine when to fire.
+	float lazerCD = 16f;							// Cool Down timer for OP lazer cannon. Set to > 15 so player can shoot on spawn.
 
     Ray shootRay;                                   // A ray from the gun end forwards.
 	Ray shootLeft;
@@ -68,8 +69,8 @@ public class PlayerShooting : MonoBehaviour
 		gunShotClips[2].volume = 0.8f;
 
 		gunList [0] = new GunClass (20, 0.15f, 32f, gunShotClips[0], 0.8f); // Rifle
-		gunList [1] = new GunClass (50, 0.8f, 15f, gunShotClips[2], 0.2f); // Shotgun
-		gunList [2] = new GunClass (200, 1.5f, 100f, gunShotClips[1], 1.1f); // Laser
+		gunList [1] = new GunClass (80, 0.8f, 15f, gunShotClips[2], 0.2f); // Shotgun
+		gunList [2] = new GunClass (200, 1.5f, 50f, gunShotClips[1], 1.1f); // Laser
 		gunType = Gun.Rifle;
     }
 
@@ -77,6 +78,7 @@ public class PlayerShooting : MonoBehaviour
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
+		lazerCD += Time.deltaTime;
 
 #if !MOBILE_INPUT
         // If the Fire1 button is being press and it's time to fire...
@@ -159,86 +161,91 @@ public class PlayerShooting : MonoBehaviour
 			gunLine.SetColors (Color.red);
 			*/
 
-        // Reset the timer.
-        timer = 0f;
+		if (gunType != Gun.Laser || (gunType == Gun.Laser && lazerCD > 15.0f)) {
+	        // Reset the timer.
+	        timer = 0f;
 
-        // Play the gun shot audioclip.
-        gunList[(int)gunType].gunShotClip.Play();
+	        // Play the gun shot audioclip.
+	        gunList[(int)gunType].gunShotClip.Play();
 
-        // Enable the lights.
-        gunLight.enabled = true;
-        faceLight.enabled = true;
+	        // Enable the lights.
+	        gunLight.enabled = true;
+	        faceLight.enabled = true;
 
-        // Stop the particles from playing if they were, then start the particles.
-        gunParticles.Stop();
-        gunParticles.Play();
+	        // Stop the particles from playing if they were, then start the particles.
+	        gunParticles.Stop();
+	        gunParticles.Play();
 
-        // Enable the line renderer and set it's first position to be the end of the gun.
-        gunLine.enabled = true;
-        gunLine.SetPosition(0, transform.position);
+	        // Enable the line renderer and set it's first position to be the end of the gun.
+	        gunLine.enabled = true;
+	        gunLine.SetPosition(0, transform.position);
 
-        // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
+	        // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 
-        shootRay.origin = transform.position;
-		shootLeft.origin = transform.position; //for shotgun
-		shootRight.origin = transform.position; //for shotgun
-
-		if (gunType == Gun.Rifle) {
-			faceLight.color = Color.yellow;
-			gunLine.material.color = Color.yellow;
-			gunLine.SetColors (Color.yellow, Color.yellow);
-			gunparticle.startColor = Color.yellow;
-			gunLight.color = Color.yellow;
-			gunLine.SetWidth (0.05f, 0.05f);
-			shootRay.direction = transform.forward;
-			ifHit (shootRay, currentRange, currentDamage, gunLine);
-		}
+	        shootRay.origin = transform.position;
+			shootLeft.origin = transform.position; //for shotgun
+			shootRight.origin = transform.position; //for shotgun
 
 
-		if (gunType == Gun.Shotgun) {
-			faceLight.color = Color.red;
-			gunLine.material.color = Color.red;
-			leftline.material.color = Color.red;
-			rightline.material.color = Color.red;
-			gunparticle.startColor = Color.red;
-			gunLine.SetColors (Color.red, Color.red);
-			gunLine.SetWidth (0.05f, 0.05f);
-			gunLight.color = Color.red;
-			leftline.enabled = true;
-			leftline.SetPosition (0, transform.position);
-			rightline.enabled = true;
-			rightline.SetPosition (0, transform.position);
-
-			shootLeft = new Ray(transform.position, Quaternion.Euler (0, -10, 0) * transform.forward);
-			shootRight = new Ray(transform.position, Quaternion.Euler (0, 10, 0) * transform.forward);
-			shootRay.direction = transform.forward;
-
-			ifHit (shootRay, currentRange, currentDamage, gunLine);
-			ifHit (shootLeft, currentRange, currentDamage, leftline);
-			ifHit (shootRight, currentRange, currentDamage, rightline);
-
-		}
-		if (gunType == Gun.Laser) {
-			faceLight.color = Color.blue;
-			gunLine.material.color = Color.blue;
-			gunLine.SetColors (Color.blue, Color.blue);
-			gunparticle.startColor = Color.blue;
-			gunLight.color = Color.blue;
-			gunLine.SetWidth (0.05f, 1f);
-			shootRay.direction = transform.forward;
-
-			RaycastHit[] rayhits;
-			rayhits = Physics.SphereCastAll (shootRay, 0.7f);
-			for (int i = 0; i < rayhits.Length; i++) {
-				EnemyHealth enemyHealth = rayhits[i].collider.GetComponent<EnemyHealth> ();
-
-				// If the EnemyHealth component exist...
-				if (enemyHealth != null) {
-					// ... the enemy should take damage.
-					enemyHealth.TakeDamage (currentDamage, shootHit.point);
-				}
+			if (gunType == Gun.Rifle) {
+				faceLight.color = Color.yellow;
+				gunLine.material.color = Color.yellow;
+				gunLine.SetColors (Color.yellow, Color.yellow);
+				gunparticle.startColor = Color.yellow;
+				gunLight.color = Color.yellow;
+				gunLine.SetWidth (0.05f, 0.05f);
+				shootRay.direction = transform.forward;
+				ifHit (shootRay, currentRange, currentDamage, gunLine);
 			}
-			gunLine.SetPosition (1, shootRay.origin + shootRay.direction * currentRange);
+
+
+			if (gunType == Gun.Shotgun) {
+				faceLight.color = Color.red;
+				gunLine.material.color = Color.red;
+				leftline.material.color = Color.red;
+				rightline.material.color = Color.red;
+				gunparticle.startColor = Color.red;
+				gunLine.SetColors (Color.red, Color.red);
+				gunLine.SetWidth (0.05f, 0.05f);
+				gunLight.color = Color.red;
+				leftline.enabled = true;
+				leftline.SetPosition (0, transform.position);
+				rightline.enabled = true;
+				rightline.SetPosition (0, transform.position);
+
+				shootLeft = new Ray(transform.position, Quaternion.Euler (0, -10, 0) * transform.forward);
+				shootRight = new Ray(transform.position, Quaternion.Euler (0, 10, 0) * transform.forward);
+				shootRay.direction = transform.forward;
+
+				ifHit (shootRay, currentRange, currentDamage, gunLine);
+				ifHit (shootLeft, currentRange, currentDamage, leftline);
+				ifHit (shootRight, currentRange, currentDamage, rightline);
+
+			}
+			if (gunType == Gun.Laser) {
+				// TODO activate UI element to display cooldown on OP lazer
+				lazerCD = 0f;
+				faceLight.color = Color.blue;
+				gunLine.material.color = Color.blue;
+				gunLine.SetColors (Color.blue, Color.blue);
+				gunparticle.startColor = Color.blue;
+				gunLight.color = Color.blue;
+				gunLine.SetWidth (0.05f, 1f);
+				shootRay.direction = transform.forward;
+
+				RaycastHit[] rayhits;
+				rayhits = Physics.SphereCastAll (shootRay, 0.7f);
+				for (int i = 0; i < rayhits.Length; i++) {
+					EnemyHealth enemyHealth = rayhits [i].collider.GetComponent<EnemyHealth> ();
+
+					// If the EnemyHealth component exist...
+					if (enemyHealth != null) {
+						// ... the enemy should take damage.
+						enemyHealth.TakeDamage (currentDamage, shootHit.point);
+					}
+				}
+				gunLine.SetPosition (1, shootRay.origin + shootRay.direction * currentRange);
+			}
 		}
     }
 }
