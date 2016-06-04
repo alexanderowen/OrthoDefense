@@ -7,8 +7,14 @@ using UnityEditor;
 //This class is used for the splash screen.
 
 public class MenuScript : MonoBehaviour {
+	private AudioSource menumusic;
 
-	void Start(){}
+	void Start(){
+		menumusic = GameObject.Find ("MenuMusic").GetComponent<AudioSource> ();
+		menumusic.loop = true;
+		menumusic.enabled = true;
+		menumusic.Play();
+	}
 
 	public void newGame()
 	{
