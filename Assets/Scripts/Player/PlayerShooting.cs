@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnitySampleAssets.CrossPlatformInput;
 
 
@@ -11,7 +12,7 @@ public class PlayerShooting : MonoBehaviour
 
 
     float timer = 0f;                               // A timer to determine when to fire.
-	float lazerCD = 16f;							// Cool Down timer for OP lazer cannon. Set to > 15 so player can shoot on spawn.
+	float laserCD = 16f;							// Cool Down timer for OP laser cannon. Set to > 15 so player can shoot on spawn.
 
     Ray shootRay;                                   // A ray from the gun end forwards.
 	Ray shootLeft;
@@ -19,6 +20,10 @@ public class PlayerShooting : MonoBehaviour
 	public LineRenderer leftline;
 	public LineRenderer rightline;
 	public ParticleSystem gunparticle;
+	public Toggle AKtoggle;
+	public Toggle Shotguntoggle;
+	public Toggle Lasertoggle;
+	public Text LaserCDtext;
 
     RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
     int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
@@ -35,6 +40,7 @@ public class PlayerShooting : MonoBehaviour
     private int currentDamage;
 	private float currentTime;
 	private float currentRange;
+	private float interval = 0f;							//for text update
 
     class GunClass {
 		public int damagePerShot;
@@ -78,7 +84,18 @@ public class PlayerShooting : MonoBehaviour
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
-		lazerCD += Time.deltaTime;
+		laserCD += Time.deltaTime;
+		interval += Time.deltaTime;
+		if (laserCD < 15f){
+			if (interval > 1f) {
+				interval = 0f;
+				int remaining = (int) (15f - laserCD);
+				LaserCDtext.text = string.Format("Laser Cooldown: {0}", remaining);
+			}
+		}
+		else {
+			LaserCDtext.text = "Laser Cooldown: READY";
+		}
 
 #if !MOBILE_INPUT
         // If the Fire1 button is being press and it's time to fire...
@@ -104,12 +121,21 @@ public class PlayerShooting : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.Alpha1)) {
 			gunType = Gun.Rifle;
+			AKtoggle.isOn = true;
+			Shotguntoggle.isOn = false;
+			Lasertoggle.isOn = false;
 		}
 		else if (Input.GetKeyDown (KeyCode.Alpha2)) {
 			gunType = Gun.Shotgun;
+			AKtoggle.isOn = false;
+			Shotguntoggle.isOn = true;
+			Lasertoggle.isOn = false;
         } 
 		else if (Input.GetKeyDown (KeyCode.Alpha3)) {
 			gunType = Gun.Laser;
+			AKtoggle.isOn = false;
+			Shotguntoggle.isOn = false;
+			Lasertoggle.isOn = true;
 		}
     }
 
@@ -161,7 +187,7 @@ public class PlayerShooting : MonoBehaviour
 			gunLine.SetColors (Color.red);
 			*/
 
-		if (gunType != Gun.Laser || (gunType == Gun.Laser && lazerCD > 15.0f)) {
+		if (gunType != Gun.Laser || (gunType == Gun.Laser && laserCD > 15.0f)) {
 	        // Reset the timer.
 	        timer = 0f;
 
@@ -223,8 +249,8 @@ public class PlayerShooting : MonoBehaviour
 
 			}
 			if (gunType == Gun.Laser) {
-				// TODO activate UI element to display cooldown on OP lazer
-				lazerCD = 0f;
+				// TODO activate UI element to display cooldown on OP laser
+				laserCD = 0f;
 				faceLight.color = Color.blue;
 				gunLine.material.color = Color.blue;
 				gunLine.SetColors (Color.blue, Color.blue);
