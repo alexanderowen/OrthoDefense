@@ -10,9 +10,10 @@ public class MiniMap : MonoBehaviour {
 	public GameObject house;
 
 	void Start () {
-		onPlayer = true;
+		transform.position = house.transform.position;
+		//onPlayer = true;
 	}
-
+	/*
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
@@ -27,6 +28,7 @@ public class MiniMap : MonoBehaviour {
 			transform.position = house.transform.position;
 		}
 	}
+	*/
 
 	void OnPreCull ()
 	{
