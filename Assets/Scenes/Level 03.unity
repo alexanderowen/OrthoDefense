@@ -1338,6 +1338,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11426938, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1838551949}
+    - target: {fileID: 11426938, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
   m_IsPrefabParent: 0
@@ -4966,6 +4974,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1838551949 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11413014, guid: 261443f7f6a1f41af8e94db89c3f8cca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1838551948}
+  m_Script: {fileID: 11500000, guid: 189bfb9c6772b6b4a87e12cd8b9af36f, type: 3}
 --- !u!1 &1846297587 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}

@@ -419,6 +419,14 @@ Prefab:
       propertyPath: mageprefab
       value: 
       objectReference: {fileID: 176682, guid: 69e5bdab1447cb74bb23526e116d0131, type: 2}
+    - target: {fileID: 11426938, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1229257244}
+    - target: {fileID: 11426938, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
   m_IsPrefabParent: 0
@@ -3579,6 +3587,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1229257244 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11413014, guid: 261443f7f6a1f41af8e94db89c3f8cca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1229257243}
+  m_Script: {fileID: 11500000, guid: 189bfb9c6772b6b4a87e12cd8b9af36f, type: 3}
 --- !u!1 &1231764802
 GameObject:
   m_ObjectHideFlags: 0
