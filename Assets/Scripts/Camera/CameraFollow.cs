@@ -31,7 +31,6 @@ namespace CompleteProject
 				// layer mask ignores colliders ie: ignore scene objects to check for floor mask
 				// 8 is floor layer
 				if (Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 9)) {
-					print ("Ray is hitting");
 					Vector3 direction = new Vector3 (Input.GetAxis ("Horizontal") * 10.5f * Time.deltaTime, Input.GetAxis ("Vertical") * 10.5f * Time.deltaTime, 0.0f);
 					transform.Translate (direction);
 
