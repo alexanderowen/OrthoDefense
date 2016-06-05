@@ -39,11 +39,7 @@ namespace CompleteProject
 						direction = -direction;
 						transform.Translate (direction);
 					}
-
-				} else {
-					print("Ray is not hitting");
-				}
-				return;
+				} 
 			}
 
             // Create a postion the camera is aiming for based on the offset from the target.
