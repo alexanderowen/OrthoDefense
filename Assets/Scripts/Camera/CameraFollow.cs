@@ -30,16 +30,19 @@ namespace CompleteProject
 				// this is saying that if the raycast doesnt hit something ?below? layer 9?
 				// layer mask ignores colliders ie: ignore scene objects to check for floor mask
 				// 8 is floor layer
-				if (Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 8)) {
+				if (Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 9)) {
+					print ("Ray is hitting");
 					Vector3 direction = new Vector3 (Input.GetAxis ("Horizontal") * 10.5f * Time.deltaTime, Input.GetAxis ("Vertical") * 10.5f * Time.deltaTime, 0.0f);
 					transform.Translate (direction);
 
 					ray = camera.ViewportPointToRay (new Vector3 (0.5f, 0.5f, 0f));
-					if (!Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 8)) { 
+					if (!Physics.Raycast (ray, out hitter, Mathf.Infinity, 1 << 9)) { 
 						direction = -direction;
-						transform.Translate(direction);
+						transform.Translate (direction);
 					}
 
+				} else {
+					print("Ray is not hitting");
 				}
 				return;
 			}

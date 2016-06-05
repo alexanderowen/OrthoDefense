@@ -646,57 +646,9 @@ Prefab:
       propertyPath: miniMap
       value: 
       objectReference: {fileID: 234880741}
-    - target: {fileID: 22343382, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 153992, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: m_TagString
-      value: BuildCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 22583152, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11438406, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: m_Transition
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11417242, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: CannonButton
-      value: 
-      objectReference: {fileID: 519623954}
-    - target: {fileID: 11417242, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: MageButton
-      value: 
-      objectReference: {fileID: 519623953}
-    - target: {fileID: 189986, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11438406, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: m_Navigation.m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11493722, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
-      propertyPath: m_Navigation.m_Mode
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 829c8a76244c940d3a5e17fd9954fff4, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &519623953 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11493722, guid: 829c8a76244c940d3a5e17fd9954fff4,
-    type: 2}
-  m_PrefabInternal: {fileID: 519623952}
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!114 &519623954 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11438406, guid: 829c8a76244c940d3a5e17fd9954fff4,
-    type: 2}
-  m_PrefabInternal: {fileID: 519623952}
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &613317841 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 129266, guid: 8ae36bf8265cb4d2a9a99ecdd57b4d98, type: 2}
@@ -1015,19 +967,19 @@ Prefab:
       objectReference: {fileID: 177674577}
     - target: {fileID: 22412700, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22412700, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22407816, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22407816, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}

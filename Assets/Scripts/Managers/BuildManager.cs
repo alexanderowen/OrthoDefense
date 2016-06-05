@@ -108,6 +108,10 @@ public class BuildManager : MonoBehaviour {
 		if (magetower)
 			magetower = false;
 		cannontower = !cannontower;
+		//if (cannontower)
+			//cannonImage.color = Color.gray;
+		//else 
+			//cannonImage.color = Color.white;
 	}
 
 	public void mageTower() {
