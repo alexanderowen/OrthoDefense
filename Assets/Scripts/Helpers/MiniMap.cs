@@ -5,30 +5,27 @@ public class MiniMap : MonoBehaviour {
 
 	public Light _light;
 
-	bool onPlayer;
+	bool DisplayOn;
 	public GameObject player;
 	public GameObject house;
 
 	void Start () {
 		transform.position = house.transform.position;
-		//onPlayer = true;
+		DisplayOn = false;
 	}
-	/*
+
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
-			onPlayer = !onPlayer;
-		}
-
-		if (onPlayer) {
-			transform.position = player.transform.position;
-			transform.position = player.transform.position;
-		} else {
-			transform.position = house.transform.position;
-			transform.position = house.transform.position;
+			DisplayOn = !DisplayOn;
+			if (DisplayOn) {
+				GetComponent<Camera> ().enabled = true;
+			} else {
+				GetComponent<Camera> ().enabled = false;
+			}
 		}
 	}
-	*/
+
 
 	void OnPreCull ()
 	{
