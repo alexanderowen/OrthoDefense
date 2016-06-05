@@ -7,6 +7,8 @@ using UnityEditor;
 //This class is used for the splash screen.
 
 public class MenuScript : MonoBehaviour {
+	public GameObject HowToPlayPanel;
+
 	private AudioSource menumusic;
 
 	void Start(){
@@ -19,6 +21,14 @@ public class MenuScript : MonoBehaviour {
 	public void newGame()
 	{
 		SceneManager.LoadScene ("Level 01 5.x");
+	}
+
+	public void ToggleHowToPlayPanel() {
+		if (HowToPlayPanel.activeSelf) {
+			HowToPlayPanel.SetActive (false);
+		} else {
+			HowToPlayPanel.SetActive (true);
+		}
 	}
 
 	public void Quit()
