@@ -543,7 +543,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 22451628}
   m_HandleRect: {fileID: 0}
@@ -570,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhealth: 100
   towerHealthSlider: {fileID: 11404240}
+  currenthealth: 0
 --- !u!114 &11461618
 MonoBehaviour:
   m_ObjectHideFlags: 1
