@@ -1386,6 +1386,22 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 2050823693}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: AKtoggle
+      value: 
+      objectReference: {fileID: 1822621059}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: Shotguntoggle
+      value: 
+      objectReference: {fileID: 1990720429}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: Lasertoggle
+      value: 
+      objectReference: {fileID: 682799814}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: LaserCDtext
+      value: 
+      objectReference: {fileID: 663633070}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
   m_IsPrefabParent: 0
@@ -2144,19 +2160,19 @@ Prefab:
       objectReference: {fileID: 987099306}
     - target: {fileID: 22407816, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22407816, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22412700, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22412700, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11401858, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_Enabled
@@ -2206,6 +2222,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.7619405, y: 1.5636911, z: 1.1947615}
   m_Center: {x: 1.2037925, y: -0.07514477, z: 0.26845017}
+--- !u!114 &663633070 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11426350, guid: 65dc31e7043f141e0bc3b37944f905e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 662336772}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &668806269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,6 +2385,12 @@ Prefab:
     - {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &682799814 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11490070, guid: 65dc31e7043f141e0bc3b37944f905e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 662336772}
+  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &685997040
 GameObject:
   m_ObjectHideFlags: 0
@@ -6541,6 +6569,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.7619405, y: 1.5636911, z: 1.1947615}
   m_Center: {x: 1.2037925, y: -0.07514477, z: 0.26845017}
+--- !u!114 &1822621059 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11446876, guid: 65dc31e7043f141e0bc3b37944f905e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 662336772}
+  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1845861781
 GameObject:
   m_ObjectHideFlags: 0
@@ -6857,6 +6891,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 556aad353675745a599edba7de06e97f, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1990720429 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11450092, guid: 65dc31e7043f141e0bc3b37944f905e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 662336772}
+  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &1995134790 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11448930, guid: 8ae36bf8265cb4d2a9a99ecdd57b4d98,

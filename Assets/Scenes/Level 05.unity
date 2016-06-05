@@ -532,6 +532,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 78139950}
   m_Mesh: {fileID: 4300000, guid: 66756304be5ae4545bcbdef9ff1489b2, type: 3}
+--- !u!114 &87713367 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11490070, guid: 65dc31e7043f141e0bc3b37944f905e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2117264010}
+  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &93881320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1708,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5982864, y: 1.4134922, z: 1.3384801}
   m_Center: {x: 0.7363034, y: -0.57969856, z: 0.38901582}
+--- !u!114 &643997526 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11426350, guid: 65dc31e7043f141e0bc3b37944f905e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2117264010}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &650232998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,6 +2582,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 966772906}
   m_Mesh: {fileID: 4300002, guid: d19e7b90b0f3b4549bcf11cf1d4987c0, type: 3}
+--- !u!114 &977381901 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11446876, guid: 65dc31e7043f141e0bc3b37944f905e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2117264010}
+  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &993088631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,6 +4579,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8979971, y: 0.28436762, z: 0.5042686}
   m_Center: {x: 0.0025110466, y: 0.18513334, z: 0.0026803694}
+--- !u!114 &1580588480 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11450092, guid: 65dc31e7043f141e0bc3b37944f905e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2117264010}
+  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1592206419
 GameObject:
   m_ObjectHideFlags: 0
@@ -6378,6 +6402,22 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: AKtoggle
+      value: 
+      objectReference: {fileID: 977381901}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: Shotguntoggle
+      value: 
+      objectReference: {fileID: 1580588480}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: Lasertoggle
+      value: 
+      objectReference: {fileID: 87713367}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: LaserCDtext
+      value: 
+      objectReference: {fileID: 643997526}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
   m_IsPrefabParent: 0
