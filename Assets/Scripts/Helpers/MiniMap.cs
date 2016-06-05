@@ -16,7 +16,7 @@ public class MiniMap : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.LeftShift)) {
+		if (Input.GetKeyDown (KeyCode.LeftShift) || Input.GetKeyDown (KeyCode.RightShift)) {
 			DisplayOn = !DisplayOn;
 			if (DisplayOn) {
 				GetComponent<Camera> ().enabled = true;

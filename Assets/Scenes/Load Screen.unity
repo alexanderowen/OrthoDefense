@@ -315,13 +315,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '-Build defense towers
+  m_Text: '- Build defense towers
 
-    -Defeat the enemy onslaught
+    - Defeat the enemy onslaught
 
-    -Don''t let yourself get hurt
+    - Don''t let yourself get hurt
 
-    -Don''t let your house get destroyed
+    - Don''t let your house get destroyed
 
 '
 --- !u!222 &484238553
@@ -1055,8 +1055,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "    Move\n   Shoot \t\n         1           \n         2      \n         3
-    \nLeft Shift"
+  m_Text: "     Move\n    Shoot \t\n         1           \n         2      \n         3
+    \n     Shift"
 --- !u!222 &1393877472
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1944,7 +1944,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "     - arrow keys (wasd)\n     - Point & Click\n     - Equip Assualt rifle\n
+  m_Text: "     - Arrow  Keys (wasd)\n     - Point & Click\n     - Equip Assualt rifle\n
     \    - Equip Shotgun\n     - Equip Laser Rifle\n     - Toggle Minimap"
 --- !u!222 &2095983621
 CanvasRenderer:
