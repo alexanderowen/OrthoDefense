@@ -7591,13 +7591,9 @@ Prefab:
       propertyPath: buildCanvas
       value: 
       objectReference: {fileID: 800361529}
-    - target: {fileID: 22412700, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22412700, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
+    - target: {fileID: 138600, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22407816, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_AnchorMax.x
@@ -7607,7 +7603,14 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
+    - target: {fileID: 22412700, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412700, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 11401858, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: m_Enabled
       value: 1
@@ -7616,8 +7619,6 @@ Prefab:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 1551281298}
-=======
->>>>>>> Stashed changes
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
   m_IsPrefabParent: 0
