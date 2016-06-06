@@ -18,12 +18,13 @@ public class EnemyHealth : MonoBehaviour
 	AudioSource enemyAudio;                     // Reference to the audio source.
 	ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
 	CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
-	bool isDead;                                // Whether the enemy is dead.
+	public bool isDead;                                // Whether the enemy is dead.
 	bool isSinking;                             // Whether the enemy has started sinking through the floor.
 
 
 	void Awake ()
 	{
+        isDead = false;
 		// Setting up the references.
 		anim = GetComponent <Animator> ();
 		enemyAudio = GetComponent <AudioSource> ();
@@ -84,8 +85,9 @@ public class EnemyHealth : MonoBehaviour
 
 		if(currentHealth <= 0)
 		{
-			Death();
-			isZapped = false;
+            isZapped = false;
+            Death();
+			
 		}
 	}
 

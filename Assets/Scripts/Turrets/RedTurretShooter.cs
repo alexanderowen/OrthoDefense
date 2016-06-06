@@ -57,14 +57,17 @@ public class RedTurretShooter : MonoBehaviour {
     void ShootLightning()
     {
         //lr.enabled = true;
-        GameObject enemy = enemyQueue.Peek();
-        if (enemy != null)
+        if (enemyQueue.Peek() != null)
         {
-            enemy.GetComponent<EnemyHealth>().isZapped = true;
+            GameObject enemy = enemyQueue.Peek();
+            if (enemy.GetComponent<EnemyHealth>().isDead == false)
+            {
+                enemy.GetComponent<EnemyHealth>().isZapped = true;
 
-            //lr.SetPosition(0, new Vector3(this.transform.position.x, this.transform.position.y + 5.8f, this.transform.position.z));
-            //lr.SetPosition(1, enemy.transform.position);
-            this.GetComponentInChildren<LightningBolt>().target = enemy.transform;
+                //lr.SetPosition(0, new Vector3(this.transform.position.x, this.transform.position.y + 5.8f, this.transform.position.z));
+                //lr.SetPosition(1, enemy.transform.position);
+                this.GetComponentInChildren<LightningBolt>().target = enemy.transform;
+            }
         }
         else
         {

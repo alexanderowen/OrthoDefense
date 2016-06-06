@@ -29,12 +29,14 @@ public class ExplosionMat : MonoBehaviour {
 	int useoctaves = 4;
 	public int _quality = 2;
 	int usequality = 2;
-	
-	// Use this for initialization
-	void Start () {
-		GetComponent<Renderer>().material = new Material(ExplosionMaterial);
-		UpdateShaderProperties();
-	}
+
+    // Use this for initialization
+    void Start()
+    {
+        GetComponent<Renderer>().material = new Material(ExplosionMaterial);
+        UpdateShaderProperties();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

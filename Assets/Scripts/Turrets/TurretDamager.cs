@@ -7,6 +7,7 @@ public class TurretDamager : MonoBehaviour {
     public float forceTime;
     public GameObject puff;
 
+    private GameObject puffCopy;
     private bool isExploding;
     private EnemyHealth enemyHealth;
     private new Renderer renderer;
@@ -52,8 +53,13 @@ public class TurretDamager : MonoBehaviour {
 
     IEnumerator explosionDestroy()
     {
-        Object boom = Instantiate(puff, this.gameObject.transform.position, this.gameObject.transform.rotation);
-        yield return new WaitForSeconds(.5f);
+        GameObject boom = (GameObject)Instantiate(puff, this.gameObject.transform.position, this.gameObject.transform.rotation);
+        for(int i = 0; i < 30; i++)
+        {
+            yield return new WaitForSeconds(.05f);
+            boom.GetComponent<ExplosionMat>()._alpha = Mathf.Lerp(boom.GetComponent<ExplosionMat>()._alpha, -.5f, .15f);
+        }
+        yield return new WaitForSeconds(.25f);
         Destroy(boom);
         Destroy(this.gameObject);
     }

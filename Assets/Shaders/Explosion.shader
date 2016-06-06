@@ -186,5 +186,5 @@ Shader "Explosion" {
 			ENDCG
 		}
 	}
-	CustomEditor "CJPyroclasticMaterialEditor"
+	//CustomEditor "CJPyroclasticMaterialEditor"
 }
