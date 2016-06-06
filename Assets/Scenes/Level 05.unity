@@ -3546,7 +3546,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22416506, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.78571427
       objectReference: {fileID: 0}
     - target: {fileID: 22416506, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.y
@@ -3554,11 +3554,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22442704, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0.78571427
       objectReference: {fileID: 0}
     - target: {fileID: 22442704, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.78571427
       objectReference: {fileID: 0}
     - target: {fileID: 22442704, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.y
@@ -3566,7 +3566,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22473440, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.85714287
       objectReference: {fileID: 0}
     - target: {fileID: 22473440, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.y
@@ -3574,11 +3574,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22465926, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0.85714287
       objectReference: {fileID: 0}
     - target: {fileID: 22465926, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.85714287
       objectReference: {fileID: 0}
     - target: {fileID: 22465926, guid: 261443f7f6a1f41af8e94db89c3f8cca, type: 2}
       propertyPath: m_AnchorMax.y
@@ -4535,7 +4535,7 @@ Prefab:
       objectReference: {fileID: 285592743}
     - target: {fileID: 11458610, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnCount
-      value: 666666
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
