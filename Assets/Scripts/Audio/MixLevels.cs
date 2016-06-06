@@ -17,7 +17,7 @@ public class MixLevels : MonoBehaviour {
 	}
 
 	void Awake(){
-		SetSfxLvl (0.8f);
-		SetMusicLvl (0.9f);
+		SetSfxLvl (-25.00f);
+		SetMusicLvl (-20.00f);
 	}
 }
