@@ -135,15 +135,13 @@ public class EnemyHealth : MonoBehaviour
 		if (this.transform.name.StartsWith("Hell")) {
 			Vector3 deathPos = this.transform.position;
 			deathPos.y += 1;
-			if (Random.value > 0) {
-				if (Random.value < .5) {
-					Instantiate (redScroll, deathPos, Quaternion.identity);
-				} else {
-					Instantiate (blueScroll, deathPos, Quaternion.identity);
-				}
+			float rand = Random.value;
+			if (rand < .25) {
+				Instantiate (redScroll, deathPos, Quaternion.identity);
+			} else if (rand > .5) {
+				Instantiate (blueScroll, deathPos, Quaternion.identity);
 			}
 		}
-
 	}
 
 
