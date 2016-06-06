@@ -15,4 +15,9 @@ public class MixLevels : MonoBehaviour {
 	{
 		masterMixer.SetFloat ("musicVol", musicLvl);
 	}
+
+	void Awake(){
+		SetSfxLvl (0.8f);
+		SetMusicLvl (0.9f);
+	}
 }
