@@ -78,7 +78,7 @@ public class PlayerShooting : MonoBehaviour
 
 		gunList [0] = new GunClass (20, 0.15f, 32f, gunShotClips[0], 0.8f); // Rifle
 		gunList [1] = new GunClass (100, 0.8f, 10f, gunShotClips[2], 0.2f); // Shotgun
-		gunList [2] = new GunClass (200, 1.5f, 50f, gunShotClips[1], 1.1f); // Laser
+		gunList [2] = new GunClass (200, 5f, 50f, gunShotClips[1], 1.1f); // Laser
 		gunType = Gun.Rifle;
     }
 
@@ -175,8 +175,19 @@ public class PlayerShooting : MonoBehaviour
 		}
 	}
 
-	IEnumerator Delay(){
-		yield return new WaitForSeconds (3f);
+	IEnumerator Delay(Ray shot){
+		yield return new WaitForSeconds (0.9f);
+		RaycastHit[] rayhits;
+		rayhits = Physics.SphereCastAll (shot, 0.7f);
+		for (int i = 0; i < rayhits.Length; i++) {
+			EnemyHealth enemyHealth = rayhits [i].collider.GetComponent<EnemyHealth> ();
+
+			// If the EnemyHealth component exist...
+			if (enemyHealth != null) {
+				// ... the enemy should take damage.
+				enemyHealth.TakeDamage (currentDamage, shootHit.point);
+			}
+		}
 	}
 
 	void Shoot(Gun gunType)
@@ -184,14 +195,6 @@ public class PlayerShooting : MonoBehaviour
         currentDamage = gunList[(int)gunType].damagePerShot;
         currentTime = gunList[(int)gunType].timeBetweenBullets;
         currentRange = gunList[(int)gunType].range;
-		/*
-		if (gunType == Gun.Rifle)
-			gunLine.SetColors(Color.yellow);
-		if (gunType == Gun.Shotgun)
-        	gunLine.SetColors(Color.green);
-		if (gunType == Gun.Laser)
-			gunLine.SetColors (Color.red);
-			*/
 
 		if (gunType != Gun.Laser || (gunType == Gun.Laser && laserCD > 10.0f)) {
 	        // Reset the timer.
@@ -218,6 +221,7 @@ public class PlayerShooting : MonoBehaviour
 			}
 	        // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 
+			shootRay.direction = transform.forward;
 	        shootRay.origin = transform.position;
 			shootLeft.origin = transform.position; //for shotgun
 			shootRight.origin = transform.position; //for shotgun
@@ -225,7 +229,6 @@ public class PlayerShooting : MonoBehaviour
 
 			if (gunType == Gun.Rifle) {
 				gunLine.SetWidth (0.05f, 0.05f);
-				shootRay.direction = transform.forward;
 				ifHit (shootRay, currentRange, currentDamage, gunLine);
 			}
 
@@ -239,7 +242,6 @@ public class PlayerShooting : MonoBehaviour
 
 				shootLeft = new Ray(transform.position, Quaternion.Euler (0, -10, 0) * transform.forward);
 				shootRight = new Ray(transform.position, Quaternion.Euler (0, 10, 0) * transform.forward);
-				shootRay.direction = transform.forward;
 
 				ifHit (shootRay, currentRange, currentDamage, gunLine);
 				ifHit (shootLeft, currentRange, currentDamage, leftline);
@@ -248,22 +250,11 @@ public class PlayerShooting : MonoBehaviour
 			}
 			if (gunType == Gun.Laser) {
 				//add delay to shot
-				StartCoroutine(Delay());
+
 				laserCD = 0f;
 				laserline.SetWidth (2f, 2f);
-				shootRay.direction = transform.forward;
+				StartCoroutine(Delay(shootRay));
 
-				RaycastHit[] rayhits;
-				rayhits = Physics.SphereCastAll (shootRay, 0.7f);
-				for (int i = 0; i < rayhits.Length; i++) {
-					EnemyHealth enemyHealth = rayhits [i].collider.GetComponent<EnemyHealth> ();
-
-					// If the EnemyHealth component exist...
-					if (enemyHealth != null) {
-						// ... the enemy should take damage.
-						enemyHealth.TakeDamage (currentDamage, shootHit.point);
-					}
-				}
 				laserline.SetPosition (1, shootRay.origin + shootRay.direction * currentRange);
 			}
 		}
