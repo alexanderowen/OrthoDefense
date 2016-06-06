@@ -336,8 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3664ce6a5794f43828008bec0d8c91a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 1
-  attackDamage: 100
+  timeBetweenAttacks: 0.5
+  attackDamage: 4
 --- !u!114 &11440158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cade89e859e49d8878f1d97b531d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 2000
+  startingHealth: 4000
   currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 9001
@@ -357,6 +357,7 @@ MonoBehaviour:
   redScroll: {fileID: 128496, guid: deade97b943994915906b12f69fd1978, type: 2}
   blueScroll: {fileID: 195396, guid: 66f04bb8c60a24ce0bf6c048d50b4d22, type: 2}
   isZapped: 0
+  isDead: 0
 --- !u!114 &11442444
 MonoBehaviour:
   m_ObjectHideFlags: 1
