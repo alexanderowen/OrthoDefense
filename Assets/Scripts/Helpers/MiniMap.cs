@@ -11,7 +11,7 @@ public class MiniMap : MonoBehaviour {
 
 	void Start () {
 		transform.position = house.transform.position;
-		DisplayOn = false;
+		DisplayOn = true;
 	}
 
 	void Update ()
