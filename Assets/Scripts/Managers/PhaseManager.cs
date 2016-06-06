@@ -11,6 +11,9 @@ public class PhaseManager : MonoBehaviour {
 	public GameObject homeHealthUI;
 	public GameObject scoreText;
 	public GameObject buildCanvas;
+	public GameObject AKUI;
+	public GameObject SGUI;
+	public GameObject LZUI;
 
 	private GameObject enemyManager;
 	private GameObject player;
@@ -19,8 +22,10 @@ public class PhaseManager : MonoBehaviour {
 	void Awake() {
 		anim = GetComponent<Animator> ();
 		enemyManager = GameObject.Find ("EnemyManager");
-
 		player = GameObject.Find ("Player");
+		AKUI.SetActive (false);
+		SGUI.SetActive (false);
+		LZUI.SetActive (false);
 
 		BeginBuildPhase ();
 	}
@@ -40,7 +45,9 @@ public class PhaseManager : MonoBehaviour {
 		GameObject nobuildzone = GameObject.Find ("NoBuildZone");
 		nobuildzone.SetActive (false);
 		enemyManager.SetActive (true);
-
+		AKUI.SetActive (true);
+		SGUI.SetActive (true);
+		LZUI.SetActive (true);
 		foreach (EnemyManager enemy in enemyManager.GetComponents<EnemyManager> ()) {
 			enemy.BeginSpawning();
 		}

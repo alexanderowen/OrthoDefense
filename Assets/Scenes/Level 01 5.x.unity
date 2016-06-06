@@ -963,14 +963,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11406288, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
-      propertyPath: enemyManager
-      value: 
-      objectReference: {fileID: 710750037}
     - target: {fileID: 11439752, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: buildCanvas
       value: 
       objectReference: {fileID: 177674577}
+    - target: {fileID: 11406288, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
+      propertyPath: enemyManager
+      value: 
+      objectReference: {fileID: 710750037}
     - target: {fileID: 11404096, guid: 65dc31e7043f141e0bc3b37944f905e4, type: 2}
       propertyPath: playerHealth
       value: 
