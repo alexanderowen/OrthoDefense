@@ -13,7 +13,7 @@ public class PlayerShooting : MonoBehaviour
 
 
     float timer = 0f;                               // A timer to determine when to fire.
-	float laserCD = 16f;							// Cool Down timer for OP laser cannon. Set to > 15 so player can shoot on spawn.
+	float laserCD = 11f;							// Cool Down timer for OP laser cannon. Set to > 10 so player can shoot on spawn.
 
     Ray shootRay;                                   // A ray from the gun end forwards.
 	Ray shootLeft;
@@ -86,13 +86,12 @@ public class PlayerShooting : MonoBehaviour
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
-		//laserCD += Time.deltaTime;
-		laserCD = 16;
+		laserCD += Time.deltaTime;
 		interval += Time.deltaTime;
-		if (laserCD < 15f){
+		if (laserCD < 10f){
 			if (interval > 1f) {
 				interval = 0f;
-				int remaining = (int) (15f - laserCD);
+				int remaining = (int) (10f - laserCD);
 				LaserCDtext.text = string.Format("Laser Cooldown: {0}", remaining);
 			}
 		}
@@ -193,7 +192,7 @@ public class PlayerShooting : MonoBehaviour
 			gunLine.SetColors (Color.red);
 			*/
 
-		if (gunType != Gun.Laser || (gunType == Gun.Laser && laserCD > 15.0f)) {
+		if (gunType != Gun.Laser || (gunType == Gun.Laser && laserCD > 10.0f)) {
 	        // Reset the timer.
 	        timer = 0f;
 
