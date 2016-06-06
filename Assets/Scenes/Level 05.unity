@@ -4535,7 +4535,7 @@ Prefab:
       objectReference: {fileID: 285592743}
     - target: {fileID: 11458610, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnCount
-      value: 6666
+      value: 666666
       objectReference: {fileID: 0}
     - target: {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
@@ -4887,7 +4887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 908157173}
   enemy: {fileID: 149842, guid: e077d0a70e72d476cb5592eb059c0287, type: 2}
-  spawnTime: 4
+  spawnTime: 3
   spawnPoints:
   - {fileID: 799797038}
 --- !u!1001 &1658309557

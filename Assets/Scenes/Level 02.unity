@@ -343,6 +343,56 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 78945188}
   m_Mesh: {fileID: 4300000, guid: 66756304be5ae4545bcbdef9ff1489b2, type: 3}
+--- !u!1001 &83390704
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 23.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 15.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 185218, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_Name
+      value: TowerBasherSpawnpoint01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &83390705 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+  m_PrefabInternal: {fileID: 83390704}
 --- !u!1001 &102360499
 Prefab:
   m_ObjectHideFlags: 0
@@ -3095,7 +3145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5053c833de684a248b7d27537c74d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: 70
+  spawnCount: 80
   isSpawning: 0
 --- !u!114 &938506314
 MonoBehaviour:
@@ -3110,7 +3160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
-  spawnTime: 10
+  spawnTime: 14
   spawnPoints:
   - {fileID: 102360500}
 --- !u!114 &938506315
@@ -3222,9 +3272,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoints:
   - {fileID: 295943048}
+--- !u!114 &938506322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938506312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1463442441}
+  enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
+  spawnTime: 5
+  spawnPoints:
+  - {fileID: 83390705}
 --- !u!1 &939848551
 GameObject:
   m_ObjectHideFlags: 0

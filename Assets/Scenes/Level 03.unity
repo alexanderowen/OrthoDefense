@@ -3907,6 +3907,56 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 176590502}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!1001 &1494447033
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -89.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -81.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 185218, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+      propertyPath: m_Name
+      value: TowerBasherSpawnpoint01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1494447034 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 470658, guid: 56adf5e8731424e4f866ab5878fa9dc9, type: 2}
+  m_PrefabInternal: {fileID: 1494447033}
 --- !u!1 &1501537085
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,7 +5435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1846297588}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
-  spawnTime: 7
+  spawnTime: 4
   spawnPoints:
   - {fileID: 1199208834}
 --- !u!114 &1963886893
@@ -5401,9 +5451,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1846297588}
   enemy: {fileID: 149842, guid: e077d0a70e72d476cb5592eb059c0287, type: 2}
-  spawnTime: 8
+  spawnTime: 7
   spawnPoints:
   - {fileID: 1199208834}
+--- !u!114 &1963886894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963886888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf862ffeb7e74943a1729f1cff11eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1846297588}
+  enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
+  spawnTime: 4
+  spawnPoints:
+  - {fileID: 1494447034}
 --- !u!114 &1963886896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5415,7 +5481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5053c833de684a248b7d27537c74d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: 90
+  spawnCount: 100
   isSpawning: 0
 --- !u!114 &1965832685 stripped
 MonoBehaviour:
