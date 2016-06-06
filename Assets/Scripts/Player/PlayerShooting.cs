@@ -78,7 +78,7 @@ public class PlayerShooting : MonoBehaviour
 
 		gunList [0] = new GunClass (20, 0.15f, 32f, gunShotClips[0], 0.8f); // Rifle
 		gunList [1] = new GunClass (100, 0.8f, 10f, gunShotClips[2], 0.2f); // Shotgun
-		gunList [2] = new GunClass (200, 5f, 50f, gunShotClips[1], 1.1f); // Laser
+		gunList [2] = new GunClass (200, 1.5f, 50f, gunShotClips[1], 1.1f); // Laser
 		gunType = Gun.Rifle;
     }
 
@@ -115,11 +115,12 @@ public class PlayerShooting : MonoBehaviour
         }
 #endif
         // If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
-        if(timer >= currentTime * effectsDisplayTime)
-        {
-            // ... disable the effects.
-            DisableEffects ();
-        }
+		if (laserline.enabled == false && timer >= currentTime * effectsDisplayTime) {
+			// ... disable the effects.
+			DisableEffects ();
+		} else if (timer >= currentTime * 0.6f) {
+			DisableLaser ();
+		}
 
 		if (Input.GetKeyDown (KeyCode.Alpha1)) {
 			gunType = Gun.Rifle;
@@ -141,7 +142,10 @@ public class PlayerShooting : MonoBehaviour
 		}
     }
 
-
+	public void DisableLaser ()
+	{
+		laserline.enabled = false;
+	}
     public void DisableEffects ()
     {
         // Disable the line renderer and the light.
@@ -150,7 +154,6 @@ public class PlayerShooting : MonoBehaviour
 		rightline.enabled = false;
 		faceLight.enabled = false;
         gunLight.enabled = false;
-		laserline.enabled = false;
     }
 
 	void ifHit(Ray shot, float currentRange, int currentDamage, LineRenderer outline) {
