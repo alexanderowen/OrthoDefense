@@ -39,7 +39,8 @@ namespace CompleteProject
 						direction = -direction;
 						transform.Translate (direction);
 					}
-				} 
+				}
+				return;
 			}
 
             // Create a postion the camera is aiming for based on the offset from the target.
