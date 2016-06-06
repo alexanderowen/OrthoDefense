@@ -20,12 +20,12 @@ public class PlayerShooting : MonoBehaviour
 	Ray shootRight;
 	public LineRenderer leftline;
 	public LineRenderer rightline;
+	public LineRenderer laserline;
 	public ParticleSystem gunparticle;
 	public Toggle AKtoggle;
 	public Toggle Shotguntoggle;
 	public Toggle Lasertoggle;
 	public Text LaserCDtext;
-	public Material GunMaterial;
 
     RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
     int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
@@ -150,6 +150,7 @@ public class PlayerShooting : MonoBehaviour
 		rightline.enabled = false;
 		faceLight.enabled = false;
         gunLight.enabled = false;
+		laserline.enabled = false;
     }
 
 	void ifHit(Ray shot, float currentRange, int currentDamage, LineRenderer outline) {
@@ -208,9 +209,13 @@ public class PlayerShooting : MonoBehaviour
 	        gunParticles.Play();
 
 	        // Enable the line renderer and set it's first position to be the end of the gun.
-	        gunLine.enabled = true;
-	        gunLine.SetPosition(0, transform.position);
-
+			if (gunType != Gun.Laser) {
+				gunLine.enabled = true;
+				gunLine.SetPosition (0, transform.position);
+			} else {
+				laserline.enabled = true;
+				laserline.SetPosition (0, transform.position);
+			}
 	        // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 
 	        shootRay.origin = transform.position;
@@ -245,7 +250,7 @@ public class PlayerShooting : MonoBehaviour
 				//add delay to shot
 				StartCoroutine(Delay());
 				laserCD = 0f;
-				gunLine.SetWidth (1f, 1f);
+				laserline.SetWidth (2f, 2f);
 				shootRay.direction = transform.forward;
 
 				RaycastHit[] rayhits;
@@ -259,7 +264,7 @@ public class PlayerShooting : MonoBehaviour
 						enemyHealth.TakeDamage (currentDamage, shootHit.point);
 					}
 				}
-				gunLine.SetPosition (1, shootRay.origin + shootRay.direction * currentRange);
+				laserline.SetPosition (1, shootRay.origin + shootRay.direction * currentRange);
 			}
 		}
     }
