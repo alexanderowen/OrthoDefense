@@ -3095,7 +3095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5053c833de684a248b7d27537c74d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: 80
+  spawnCount: 70
   isSpawning: 0
 --- !u!114 &938506314
 MonoBehaviour:
@@ -3110,7 +3110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
-  spawnTime: 28
+  spawnTime: 10
   spawnPoints:
   - {fileID: 102360500}
 --- !u!114 &938506315
@@ -3126,7 +3126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 151580, guid: cee7ba499cd3e4bfc9c46b98e33571e0, type: 2}
-  spawnTime: 4
+  spawnTime: 3
   spawnPoints:
   - {fileID: 456312373}
 --- !u!114 &938506316
@@ -3190,7 +3190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
-  spawnTime: 28
+  spawnTime: 10
   spawnPoints:
   - {fileID: 1902352305}
 --- !u!114 &938506320
@@ -3222,7 +3222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1463442441}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
-  spawnTime: 8
+  spawnTime: 10
   spawnPoints:
   - {fileID: 295943048}
 --- !u!1 &939848551

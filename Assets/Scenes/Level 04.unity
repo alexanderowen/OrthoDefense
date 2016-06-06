@@ -3221,7 +3221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1228306058}
   enemy: {fileID: 111708, guid: 5d685ab7cdd0c4b95b304b925a01a6b6, type: 2}
-  spawnTime: 8
+  spawnTime: 3
   spawnPoints:
   - {fileID: 381209615}
 --- !u!114 &648426215
@@ -3237,7 +3237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1228306058}
   enemy: {fileID: 149842, guid: e077d0a70e72d476cb5592eb059c0287, type: 2}
-  spawnTime: 10
+  spawnTime: 6
   spawnPoints:
   - {fileID: 381209615}
 --- !u!1 &651549989
@@ -5859,7 +5859,7 @@ Prefab:
       objectReference: {fileID: 153412, guid: 548c56f4bcf4db24b8aa057e9846a005, type: 2}
     - target: {fileID: 11418106, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11494236, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: enemy
@@ -5871,7 +5871,7 @@ Prefab:
       objectReference: {fileID: 464718683}
     - target: {fileID: 11494236, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnPoints.Array.data[0]
@@ -5883,7 +5883,7 @@ Prefab:
       objectReference: {fileID: 121154, guid: 0b78ca80657cf42738e8c3074351c38d, type: 2}
     - target: {fileID: 11446180, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: spawnTime
-      value: 15
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11494236, guid: 78cc1a8f336c14b2cbf025adeb4de3e4, type: 2}
       propertyPath: playerHealth
