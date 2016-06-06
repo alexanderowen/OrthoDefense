@@ -875,11 +875,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Ortho
-
-    Tower
-
-    Defense'
+  m_Text: Nightwatch
 --- !u!222 &1250552140
 CanvasRenderer:
   m_ObjectHideFlags: 0
