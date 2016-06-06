@@ -1428,14 +1428,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
-      propertyPath: damageImage
-      value: 
-      objectReference: {fileID: 1872399887}
-    - target: {fileID: 11400004, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 2050823693}
     - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
       propertyPath: AKtoggle
       value: 
@@ -1452,6 +1444,14 @@ Prefab:
       propertyPath: LaserCDtext
       value: 
       objectReference: {fileID: 663633070}
+    - target: {fileID: 11400004, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 2050823693}
+    - target: {fileID: 11400004, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
+      propertyPath: damageImage
+      value: 
+      objectReference: {fileID: 1872399887}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 2}
   m_IsPrefabParent: 0

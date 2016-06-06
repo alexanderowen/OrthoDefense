@@ -170,7 +170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.5, y: 0, z: -46.4}
+  m_LocalPosition: {x: -41.04, y: 0, z: -58.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -630,6 +630,7 @@ MonoBehaviour:
   Shotguntoggle: {fileID: 0}
   Lasertoggle: {fileID: 0}
   LaserCDtext: {fileID: 0}
+  GunMaterial: {fileID: 2100000, guid: 77febe1d97a4c4847a3320bedda45ca9, type: 2}
   faceLight: {fileID: 10800002}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -671,7 +672,7 @@ LineRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 007cd3dce0e6539409edcc484011c877, type: 2}
+  - {fileID: 2100000, guid: 77febe1d97a4c4847a3320bedda45ca9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -710,7 +711,7 @@ LineRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 007cd3dce0e6539409edcc484011c877, type: 2}
+  - {fileID: 2100000, guid: 77febe1d97a4c4847a3320bedda45ca9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -749,7 +750,7 @@ LineRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 007cd3dce0e6539409edcc484011c877, type: 2}
+  - {fileID: 2100000, guid: 77febe1d97a4c4847a3320bedda45ca9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
