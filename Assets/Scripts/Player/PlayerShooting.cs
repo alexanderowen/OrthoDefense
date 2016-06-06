@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using UnitySampleAssets.CrossPlatformInput;
 
 
@@ -174,6 +175,9 @@ public class PlayerShooting : MonoBehaviour
 		}
 	}
 
+	IEnumerator Delay(){
+		yield return new WaitForSeconds (3f);
+	}
 
 	void Shoot(Gun gunType)
     {
@@ -240,7 +244,8 @@ public class PlayerShooting : MonoBehaviour
 
 			}
 			if (gunType == Gun.Laser) {
-				// TODO activate UI element to display cooldown on OP laser
+				//add delay to shot
+				StartCoroutine(Delay());
 				laserCD = 0f;
 				gunLine.SetWidth (3f, 3f);
 				GunMaterial.mainTextureScale = new Vector2 (2f, 1f);
