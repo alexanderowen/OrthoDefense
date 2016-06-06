@@ -11,6 +11,7 @@ public class PauseManager : MonoBehaviour {
 	public AudioMixerSnapshot paused;
 	public AudioMixerSnapshot unpaused;
 	public static float brightnessLevel = -1;
+	public GameObject HowToPlayPanel;
 	
 	Canvas canvas;
 	
@@ -37,6 +38,14 @@ public class PauseManager : MonoBehaviour {
 		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
 		Lowpass ();
 		
+	}
+
+	public void ToggleHowToPlayPanel() {
+		if (HowToPlayPanel.activeSelf) {
+			HowToPlayPanel.SetActive (false);
+		} else {
+			HowToPlayPanel.SetActive (true);
+		}
 	}
 	
 	void Lowpass()
