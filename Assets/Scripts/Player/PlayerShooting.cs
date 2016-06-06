@@ -77,7 +77,7 @@ public class PlayerShooting : MonoBehaviour
 		gunShotClips[2].volume = 0.8f;
 
 		gunList [0] = new GunClass (20, 0.15f, 32f, gunShotClips[0], 0.8f); // Rifle
-		gunList [1] = new GunClass (80, 0.8f, 10f, gunShotClips[2], 0.2f); // Shotgun
+		gunList [1] = new GunClass (100, 0.8f, 10f, gunShotClips[2], 0.2f); // Shotgun
 		gunList [2] = new GunClass (200, 1.5f, 50f, gunShotClips[1], 1.1f); // Laser
 		gunType = Gun.Rifle;
     }
@@ -210,7 +210,6 @@ public class PlayerShooting : MonoBehaviour
 	        // Enable the line renderer and set it's first position to be the end of the gun.
 	        gunLine.enabled = true;
 	        gunLine.SetPosition(0, transform.position);
-			GunMaterial.mainTextureScale = new Vector2 (20, 1);
 
 	        // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 
@@ -246,8 +245,7 @@ public class PlayerShooting : MonoBehaviour
 				//add delay to shot
 				StartCoroutine(Delay());
 				laserCD = 0f;
-				gunLine.SetWidth (3f, 3f);
-				GunMaterial.mainTextureScale = new Vector2 (2f, 1f);
+				gunLine.SetWidth (1f, 1f);
 				shootRay.direction = transform.forward;
 
 				RaycastHit[] rayhits;
